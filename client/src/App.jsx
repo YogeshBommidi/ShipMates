@@ -1,8 +1,14 @@
-import { useState } from "react";
+import React from "react";
 import "./App.css";
+import "./index.css";
+import Hero from "./Components/Hero/Hero";
 
-function App() {
-  return <div className="main">ShipMates</div>;
-}
+const App = () => {
+  return (
+    <div>
+      <Hero />
+    </div>
+  );
+};
 
 export default App;
