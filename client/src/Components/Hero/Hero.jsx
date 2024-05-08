@@ -4,31 +4,17 @@ import "./Hero.css";
 const Hero = () => {
   return (
     <div className="hero-wrapper">
-      <div className="innerWidth hero-container">
-        {/**
-  <div className="hero-left">
-  <h1 className="primaryText">
-  Online Truck Booking & Transport Services in India.
-  </h1>
-  <p className="orangeText">India's #1 truck booking platform</p>
-  <div className="hero-buttons">
-  <button className="btn">Explore More</button>
-  <button className="btn">Find Loads</button>
-  </div>
-  </div>
-*/}
-        <div className="hero-left-grid">
-          <div className="grid-items">
-            <h1 className="primaryText">
-              Online Truck Booking & Transport Services in India.
-            </h1>
+      <div className="paddings innerWidth hero-container">
+        <div className="hero-left">
+          <div className="primaryText hero-title">
+            <h1> Online Truck Booking & Transport Services in India.</h1>
           </div>
-          <div className="grid-items">
-            <p className="orangeText">India's #1 truck booking platform</p>
+          <div className="orangeText hero-description">
+            <span>India's #1 truck booking platform</span>
           </div>
-          <div className="grid-items">
+          <div className="hero-buttons">
+            <button className="btn">Find Load</button>
             <button className="btn">Explore More</button>
-            <button className="btn">Find Loads</button>
           </div>
         </div>
         <div className="hero-right">
