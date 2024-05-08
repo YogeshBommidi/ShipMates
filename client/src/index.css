@@ -2,9 +2,9 @@
 
 :root {
   --orange: #ed7d31;
-  --lightGery: #6c5f5b;
+  --lightGrey: #6c5f5b;
   --darkGrey: #4f4a45;
-  --pale: #f7f7f7;
+  --pale: #F6F1EE;
   --black: #131110;
   --orange-gradient: linear-gradient(to right, rgba(236, 159, 5) ,  rgba(255, 78, 0));;
 }
@@ -15,6 +15,10 @@
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
   scroll-behavior: smooth;
+}
+
+.paddings{
+  padding: 1.5rem;
 }
 
 .innerWidth {
@@ -38,8 +42,24 @@
   font-weight: 600;
 }
 
+.btn {
+  background: var(--orange-gradient);
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 10px;
+  color: white;
+  font-size: 500;
+  font-weight: bold;
+  transition: all 300ms ease-in-out;
+}
+
+.btn:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
 /* media queries */
-@media (min-width: 1536px) {
+@media (min-width: 1422px) {
   .innerWidth {
     max-width: 1280px;
     margin: auto;

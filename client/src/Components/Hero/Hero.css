@@ -1,0 +1,38 @@
+.hero-wrapper {
+  background: var(--pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+/**
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 2rem;
+  padding: 1rem 2rem;
+}
+
+.hero-buttons > :nth-child(1) {
+  background: linear-gradient(to right, #a9a9a9 0%, #727272 100%);
+}
+*/
+.hero-left-grid{
+    display: grid;
+    padding: 2rem;
+}
+
+.grid-items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
