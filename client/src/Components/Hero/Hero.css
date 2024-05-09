@@ -5,8 +5,7 @@
 .hero-container {
   display: grid;
   grid-template-columns: auto auto;
-  gap: 1rem;
-  padding: 1rem 2rem;
+  gap: 1rem; 
 }
 
 .hero-left {

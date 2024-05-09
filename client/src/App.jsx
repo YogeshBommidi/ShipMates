@@ -5,6 +5,8 @@ import Header from "./Components/Header/Header";
 import Hero from "./Components/Hero/Hero";
 import Features from "./Components/Features/Features";
 import Platform from "./Components/Platform/Platform";
+import Brands from "./Components/Brands/Brands";
+import Reviews from "./Components/Reviews/Reviews";
 
 const App = () => {
   return (
@@ -13,6 +15,8 @@ const App = () => {
       <Hero />
       <Features />
       <Platform />
+      <Brands />
+      <Reviews />
     </div>
   );
 };

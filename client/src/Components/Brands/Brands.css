@@ -1,0 +1,23 @@
+.brands-wrapper {
+  background: var(--pale);
+}
+
+.brands-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.brands-logos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 2rem;
+    margin-top: 1rem;
+}
+
+.brands-logos > img {
+    padding: 1rem 2rem;
+}
