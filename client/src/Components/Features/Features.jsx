@@ -17,8 +17,8 @@ const Features = () => {
             some unnoticeable reasons why you should choose us:
           </span>
           <div className="features-cards">
-            {featuresData.map((cards) => {
-              return <HomeCards cards={cards} />;
+            {featuresData.map((cards, i) => {
+              return <HomeCards cards={cards} key={i} />;
             })}
           </div>
         </div>

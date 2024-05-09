@@ -11,8 +11,8 @@ const Platform = () => {
           <span className="primaryText">India’s Largest Trucking Platform</span>
         </div>
         <div className="platform-cards">
-          {platformData.map((cards) => {
-            return <HomeCards cards={cards} />;
+          {platformData.map((cards,i) => {
+            return <HomeCards cards={cards} key={i}/>;
           })}
         </div>
       </div>
