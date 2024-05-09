@@ -1,29 +1,28 @@
 .hero-wrapper {
-  background: var(--pale);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  background: var(--darkPale);
 }
 
 .hero-container {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+  padding: 1rem 2rem;
 }
 
 .hero-left {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
 }
 
-.hero-buttons button:nth-child(1){
-  margin-top: 1rem;
-  margin-right: 5rem;
+.hero-buttons{
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: start;
+  justify-content: start;
+  gap: 5rem;
+}
+
+.hero-buttons button:nth-child(1) {
   background: linear-gradient(to right, #a0a0a0 0%, #9e9e9e 100%);
-}
-
-.hero-right > img {
-  width: 35rem;
-  height: auto;
 }

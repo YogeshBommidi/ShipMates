@@ -1,0 +1,21 @@
+.platform-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #fff0e9;
+  flex-wrap: wrap;
+}
+
+.platform-cards {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+  margin: 0rem 2rem;
+  padding: 0rem 5rem;
+}
+
+.platform-heading {
+  margin-bottom: 1.5rem;
+}
