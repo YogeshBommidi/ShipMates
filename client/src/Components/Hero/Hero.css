@@ -1,38 +1,28 @@
 .hero-wrapper {
-  background: var(--pale);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  background: var(--darkPale);
 }
 
 .hero-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-}
-/**
-.hero-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  row-gap: 2rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
   padding: 1rem 2rem;
 }
 
-.hero-buttons > :nth-child(1) {
-  background: linear-gradient(to right, #a9a9a9 0%, #727272 100%);
-}
-*/
-.hero-left-grid{
-    display: grid;
-    padding: 2rem;
+.hero-left {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
 }
 
-.grid-items{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+.hero-buttons{
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: start;
+  justify-content: start;
+  gap: 5rem;
+}
+
+.hero-buttons button:nth-child(1) {
+  background: linear-gradient(to right, #a0a0a0 0%, #9e9e9e 100%);
 }

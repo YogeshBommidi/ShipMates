@@ -5,6 +5,7 @@
   --lightGrey: #6c5f5b;
   --darkGrey: #4f4a45;
   --pale: #F6F1EE;
+  --darkPale: #f5e2d7;
   --black: #131110;
   --orange-gradient: linear-gradient(to right, rgba(236, 159, 5) ,  rgba(255, 78, 0));;
 }
@@ -28,7 +29,7 @@
 .primaryText {
   color: #4f4a45;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .secondaryText {
