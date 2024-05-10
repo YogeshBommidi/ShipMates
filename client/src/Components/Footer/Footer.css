@@ -1,0 +1,40 @@
+.footer-wrapper {
+  background: var(--pale);
+}
+
+.footer-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.footer-logo > img{
+    width: 15rem;
+    height: auto;
+}
+
+.footer-1 ul{
+    padding: 0rem 5rem;
+}
+
+.footer-1 li:nth-child(1){
+    list-style: none;
+}
+
+.footer-2{
+    display: flex;
+    gap: 1rem;
+}
+
+.copy-right{
+    border-right: 2px solid gray;
+    padding-right: 1rem;
+}

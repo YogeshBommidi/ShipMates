@@ -7,6 +7,7 @@ import Features from "./Components/Features/Features";
 import Platform from "./Components/Platform/Platform";
 import Brands from "./Components/Brands/Brands";
 import Reviews from "./Components/Reviews/Reviews";
+import Footer from "./Components/Footer/Footer";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <Platform />
       <Brands />
       <Reviews />
+      <Footer />
     </div>
   );
 };
