@@ -1,0 +1,27 @@
+.about-wrapper {
+  background: var(--pale);
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.about-container > img {
+  width: 12rem;
+}
+
+.about-container > div {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0rem;
+}
+
+.about-container a {
+  text-decoration: none;
+  padding-top: 2rem;
+  color: var(--lightGrey);
+}

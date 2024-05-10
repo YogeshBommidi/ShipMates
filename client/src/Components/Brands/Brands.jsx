@@ -6,7 +6,7 @@ const Brands = () => {
     <div className="brands-wrapper">
     <div className="paddings innerWidth brands-container">
         <div className='brands-title'>
-            <span className='primaryText'>Brands Who Trust Us</span>
+            <span className='primaryText'><h2>Brands Who Trust Us</h2></span>
         </div>
         <div className="brands-logos">
         {brandsData.map((logos, i ) => {

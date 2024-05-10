@@ -4,7 +4,8 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: #fff0e9;
+  /**background: #fff0e9;*/
+  background: var(--darkPale);
   flex-wrap: wrap;
 }
 

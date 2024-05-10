@@ -7,7 +7,7 @@ const Reviews = () => {
     <div className="review-wrapper">
       <div className="paddings innerWidth review-container">
         <div className="review-title">
-          <span className="primaryText">We're Loved By Our Customers</span>
+          <span className="primaryText"><h2>We're Loved By Our Customers</h2></span>
         </div>
         <div className="review-card-section">
           {reviewsData.map((card, i) => {

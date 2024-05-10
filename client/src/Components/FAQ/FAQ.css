@@ -1,0 +1,30 @@
+.faq-wrapper{
+    background: var(--darkPale);
+}
+
+.accordion{
+    border: none;
+}
+
+.accordion-item{
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--lightGrey);
+}
+
+.accordion-button{
+    overflow: hidden;
+    margin-top: 1rem;
+    padding: 0rem 2rem;
+    display: flex;
+    align-items: center;
+    background: inherit;
+    cursor: pointer;
+}
+
+.accordion__panel{
+    padding: 0rem 2rem;
+}
+
+.accordion-button svg{
+  color: var(--darkGrey);
+}
