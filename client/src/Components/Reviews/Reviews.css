@@ -1,5 +1,6 @@
 .review-wrapper {
-  background: #fff0e9;
+  /**background: #fff0e9;*/
+  background: var(--darkPale);
 }
 
 .review-container {
@@ -13,7 +14,7 @@
   display: flex;
   align-items: start;
   justify-content: center;
-  padding: 2rem;
+  /* padding: 2rem; */
 }
 .review-card {
   padding: 1rem;

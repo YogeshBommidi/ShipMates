@@ -8,7 +8,7 @@ const Features = () => {
       <div className="paddings innerWidth features-container">
         <div className="features-head">
           <span className="primaryText features-head">
-            Right Trucking Partner for Your Business
+            <h2>Right Trucking Partner for Your Business</h2>
           </span>
           <span className="secondaryText features-desc">
             Experience hassle-free online truck booking without wasting money

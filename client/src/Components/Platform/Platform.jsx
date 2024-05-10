@@ -8,11 +8,13 @@ const Platform = () => {
     <div className="platform-wrapper">
       <div className="paddings innerWidth platform-container">
         <div className="platform-heading">
-          <span className="primaryText">India’s Largest Trucking Platform</span>
+          <span className="primaryText">
+            <h2>India’s Largest Trucking Platform</h2>
+          </span>
         </div>
         <div className="platform-cards">
-          {platformData.map((cards,i) => {
-            return <HomeCards cards={cards} key={i}/>;
+          {platformData.map((cards, i) => {
+            return <HomeCards cards={cards} key={i} />;
           })}
         </div>
       </div>
