@@ -19,35 +19,33 @@
   object-fit: cover;
 }
 
-#NavBar{
+.navbar {
   display: flex;
   align-items: center;
-  justify-content: end;
-  position: relative;
+  justify-content: center;
 }
 
-#NavBar li {
+.navbar li {
   list-style: none;
   padding: 0rem 2rem;
   position: relative;
-}
-
-#NavBar li a {
-  text-decoration: none;
-  color: inherit;
-  transition: all 300ms ease-in-out ;
+  color: var(--darkGrey);
+  transition: all 300ms ease-in-out;
   font-weight: bold;
+  cursor: pointer;
   font-size: 0.9rem;
 }
 
-#NavBar li a:hover,
-#NavBar li a.active {
-  cursor: pointer;
+.navbar li:hover {
   color: var(--orange);
 }
 
-#NavBar li a:hover::after,
-#NavBar li a.active::after  {
+.navbar li.active {
+  color: var(--orange);
+}
+
+.navbar li:hover::after,
+.navbar li.active::after {
   content: "";
   width: 30%;
   height: 2px;
@@ -57,6 +55,6 @@
   left: 30px;
 }
 
-#NavBar >:last-child{
-  padding-right: 0rem;
+.navbar > :last-child {
+  padding: 0rem;
 }

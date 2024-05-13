@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
+
 const Header = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleItemClick = (index) => {
+    setActiveIndex(index);
+  };
+
   return (
     <div className="header-wrapper">
       <div className="innerWidth header-container">
@@ -9,20 +16,30 @@ const Header = () => {
         </a>
 
         <div className="header-menu">
-          <ul id="NavBar">
-            <li>
-              <a href="" className="active">
-                HOME
-              </a>
+          <ul className="navbar">
+            <li
+              className={activeIndex === 0 ? "active" : ""}
+              onClick={() => handleItemClick(0)}
+            >
+              HOME
             </li>
-            <li>
-              <a href="">MEMBERSHIP</a>
+            <li
+              className={activeIndex === 1 ? "active" : ""}
+              onClick={() => handleItemClick(1)}
+            >
+              MEMBERSHIP
             </li>
-            <li>
-              <a href="">MARKET PLACE</a>
+            <li
+              className={activeIndex === 2 ? "active" : ""}
+              onClick={() => handleItemClick(2)}
+            >
+              MARKET PLACE
             </li>
-            <li>
-              <a href="">TRANSPORT DIRECTORY</a>
+            <li
+              className={activeIndex === 3 ? "active" : ""}
+              onClick={() => handleItemClick(3)}
+            >
+              TRANSPORT DIRECTORY
             </li>
             <li>
               <button className="btn">LOGIN/SIGNUP</button>

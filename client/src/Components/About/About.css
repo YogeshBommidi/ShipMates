@@ -11,7 +11,7 @@
 }
 
 .about-container > img {
-  width: 12rem;
+  width: 15rem;
 }
 
 .about-container > div {
@@ -20,8 +20,20 @@
   padding: 2rem 0rem;
 }
 
-.about-container a {
-  text-decoration: none;
-  padding-top: 2rem;
-  color: var(--lightGrey);
+.about-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;align-items: center;
+  padding: 1rem 5rem;
+}
+
+.about-item span {
+padding-bottom: 1rem;
+}
+
+.about-container button{
+  border: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--darkGrey);
 }

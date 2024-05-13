@@ -1,58 +1,56 @@
 .review-wrapper {
-  /**background: #fff0e9;*/
   background: var(--darkPale);
+  padding: 0rem 5rem;
 }
 
-.review-container {
+.review-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 1.5rem;
+}
+
+.review-cards {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.review-card-section {
-  display: flex;
-  align-items: start;
-  justify-content: center;
-  /* padding: 2rem; */
-}
-.review-card {
-  padding: 1rem;
-  background: white;
-  margin: 1rem;
+  background: var(--pale);
   border-radius: 10px;
-  box-shadow: 3px 3px 8px 2px #888888;
-  row-gap: 1rem;
+  padding: 0.5rem;
+  width: 15rem;
 }
 
-.review-card-image > img{
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
+.review-cards > img {
+  width: 14rem;
+  height: auto;
+  border-radius: 10px;
 }
 
-.review-card-text {
+.review-text {
   display: flex;
   flex-direction: column;
-  align-items: start;
   justify-content: center;
-  gap: 0.5rem;
+  align-items: start;
 }
 
-.review-card-text >:nth-child(1){
-    color: #4f4a45;
-    font-weight: bold;
-    font-size: 1rem;
+.review-text > :nth-child(1) {
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
-.review-card-text >:nth-child(2){
-    color: #4f4a45;
-    font-weight: 500;
-    font-size: 1rem;
+.review-text button{
+  border: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--darkGrey);
 }
 
-.review-card-text >:nth-child(3){
-    color: black;
-    font-weight: 400;
-    font-size: 0.9rem;
+.review-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 2rem;
 }

@@ -3,20 +3,23 @@
 }
 
 .hero-container {
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 1rem; 
+  display: flex;
+  justify-content: space-between;
 }
 
 .hero-left {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto auto auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .hero-buttons{
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: repeat(2, auto);
+  grid-auto-columns: auto-fit;
   align-items: start;
   justify-content: start;
   gap: 5rem;
@@ -24,4 +27,10 @@
 
 .hero-buttons button:nth-child(1) {
   background: linear-gradient(to right, #a0a0a0 0%, #9e9e9e 100%);
+}
+
+.hero-right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,30 +1,69 @@
-.faq-wrapper{
-    background: var(--darkPale);
+.faq-wrapper {
+  background: var(--darkPale);
 }
 
-.accordion{
-    border: none;
+.accordion {
+  border: none;
 }
 
-.accordion-item{
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--lightGrey);
+.accordion-item {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--lightGrey);
 }
 
-.accordion-button{
-    overflow: hidden;
-    margin-top: 1rem;
-    padding: 0rem 2rem;
-    display: flex;
-    align-items: center;
-    background: inherit;
-    cursor: pointer;
+.accordion-button {
+  overflow: hidden;
+  margin-top: 1rem;
+  padding: 0rem 2rem;
+  display: flex;
+  align-items: center;
+  background: inherit;
+  cursor: pointer;
 }
 
-.accordion__panel{
-    padding: 0rem 2rem;
+.accordion__panel {
+  padding: 0rem 2rem;
 }
 
-.accordion-button svg{
+.accordion-button svg {
   color: var(--darkGrey);
+}
+
+.faq-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: "center";
+  padding: 1.5rem 5rem;
+  gap: 1rem;
+}
+
+.faq-section {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.faq-item {
+  display: flex;
+  flex-direction: column;
+  width: 25rem;
+}
+
+.faq-item div {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.faq-item div svg{
+    fill: inherit;
+}
+
+button{
+    border: none;
+    background: inherit;
 }

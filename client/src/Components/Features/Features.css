@@ -4,11 +4,6 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-}
-
-.features-head {
-  display: flex;
-  flex-direction: column;
   text-align: center;
 }
 
@@ -19,7 +14,7 @@
 
 .features-cards {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  margin: 0rem 2rem;
+  margin: 2rem;
 }

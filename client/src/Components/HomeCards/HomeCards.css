@@ -15,11 +15,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: start;
+    text-align: start
   }
   
   .home-cards-heading{
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: var(--darkGrey);
     font-weight: bold;
   }

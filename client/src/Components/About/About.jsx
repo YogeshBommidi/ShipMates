@@ -1,26 +1,37 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import aboutData from "../../utils/about.json";
 import "./About.css";
 
+const paragraphStyles = {
+  WebkitLineClamp: 2,
+  WebkitBoxOrient: "vertical",
+  overflow: "hidden",
+  display: "-webkit-box",
+};
+
 const About = () => {
+  const [isOpen, setIsOpen] = useState(1);
+
   return (
     <div className="about-wrapper">
       <div className=" paddings innerWidth about-container">
         <img src={"./header-logo.png"} alt="" />
         <div>
-          <span className="primaryText">
-            Your Reliable and Trusted Transport Services Provider
-          </span>
-          <span className="secondaryText">
-            WheelsEye is dedicated to offering high-quality and cost-effective
-            transport services to various business owners in India. We aim to
-            reduce the gap between the customers and manufacturers/traders
-            through our hassle-free and quick transportation services. Our
-            online booking platform has simplified the process of hiring trucks
-            to transport your goods from one city to another. We manage the
-            highest number of trucks, which are more than 20 lakhs Trucks, for
-            shipping goods across PAN-India.
-          </span>
-          <a href="">Read More</a>
+          {aboutData.slice(0, isOpen).map((item, i) => (
+            <div key={i} className="about-item">
+              <span className="primaryText">{item.question}</span>
+              <span
+                className="secondaryText"
+                style={isOpen > 1 ? null : paragraphStyles}
+              >
+                {item.answer}
+              </span>
+            </div>
+          ))}
+
+          <button onClick={() => setIsOpen((prev) => (prev === 1 ? 10 : 1))}>
+            {isOpen ? "Read Less" : "Read More"}
+          </button>
         </div>
       </div>
     </div>
