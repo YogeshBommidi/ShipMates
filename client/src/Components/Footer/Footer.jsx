@@ -10,7 +10,7 @@ const Footer = () => {
 
           <div className="footer-accounts">
             <span className="primaryText">
-              <h2>Accounts</h2>
+              <h4>Account</h4>
             </span>
             <ul>
               <li className="secondaryText">Privacy Policy</li>
@@ -21,7 +21,7 @@ const Footer = () => {
           </div>
           <div className="footer-socials">
             <span className="primaryText">
-              <h2>Socials</h2>
+              <h4>SOCIALS</h4>
             </span>
             <ul>
               <li className="secondaryText">Instagram</li>
