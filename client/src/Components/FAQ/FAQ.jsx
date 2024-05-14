@@ -15,21 +15,19 @@ const FAQ = () => {
 
   return (
     <div className="faq-wrapper">
-      <div className="innerWidth faq-container">
-        <span className="primaryText">
-          <h2>FAQ's</h2>
-        </span>
+      <div className="paddings innerWidth faq-container">
+        <span className="primaryText">FAQ's</span>
         <div className="faq-section">
           {faqData.slice(0, isOpen).map((items, i) => {
             return (
               <div className="faq-item" key={i}>
                 <div>
-                  <h4>{items.question}</h4>
+                  {items.question}
                   <button onClick={() => handleToggle(i)}>
                     <MdOutlineArrowDropDown size={30} />
                   </button>
                 </div>
-                {i === isItemOpen ? <p>{items.answer}</p> : null}
+                {i === isItemOpen ? <p className="secondaryText">{items.answer}</p> : null}
               </div>
             );
           })}

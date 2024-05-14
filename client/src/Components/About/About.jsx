@@ -30,7 +30,7 @@ const About = () => {
           ))}
 
           <button onClick={() => setIsOpen((prev) => (prev === 1 ? 10 : 1))}>
-            {isOpen ? "Read More" : "Read Less"}
+            {isOpen === 1 ? "Read More" : "Read Less"}
           </button>
         </div>
       </div>

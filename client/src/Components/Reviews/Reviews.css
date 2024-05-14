@@ -1,6 +1,5 @@
 .review-wrapper {
   background: var(--darkPale);
-  padding: 0rem 5rem;
 }
 
 .review-heading {
@@ -19,12 +18,11 @@
   background: var(--pale);
   border-radius: 10px;
   padding: 0.5rem;
-  width: 15rem;
 }
 
 .review-cards > img {
-  width: 14rem;
-  height: auto;
+  width: 80%;
+  height: 7rem;
   border-radius: 10px;
 }
 
@@ -33,19 +31,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: start;
+  padding: 0rem 1rem;
 }
 
 .review-text > :nth-child(1) {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 
-.review-text > :nth-child(2){
-  font-weight: 500;
-  font-size: 1rem;
+.review-text > :nth-child(2) {
+  font-size: 0.9rem;
+  font-weight: 400;
 }
 
-.review-text button{
+.review-text button {
   border: none;
   font-weight: 500;
   font-size: 1rem;
@@ -53,7 +52,7 @@
   transition: all 300ms ease-in-out;
 }
 
-.review-text button:hover{
+.review-text button:hover {
   cursor: pointer;
   transform: scale(1.05);
 }
@@ -63,5 +62,11 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  padding-top: 2rem;
+  padding-top: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .review-card-setion {
+    padding-left: 5rem;
+  }
 }

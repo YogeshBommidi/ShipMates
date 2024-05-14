@@ -16,10 +16,9 @@
   gap: 2rem;
 }
 
-.hero-buttons{
+.hero-buttons {
   display: grid;
   grid-template-columns: repeat(2, auto);
-  grid-auto-columns: auto-fit;
   align-items: start;
   justify-content: start;
   gap: 5rem;
@@ -29,8 +28,23 @@
   background: linear-gradient(to right, #a0a0a0 0%, #9e9e9e 100%);
 }
 
-.hero-right{
+.hero-right {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 768px){
+  .hero-right img{
+    width: 20rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .hero-right {
+    display: none;
+  }
+  .hero-title{
+    font-size: 1.5rem;
+  }
 }

@@ -7,10 +7,10 @@ const Hero = () => {
       <div className="paddings innerWidth hero-container">
         <div className="hero-left">
           <div className="primaryText hero-title">
-            <h1> Online Truck Booking & Transport Services in India.</h1>
+            <h2>Online Truck Booking & Transport Services in India.</h2>
           </div>
           <div className="orangeText hero-description">
-            <span>India's #1 truck booking platform</span>
+            India's #1 truck booking platform
           </div>
           <div className="hero-buttons">
             <button className="btn">Find Load</button>

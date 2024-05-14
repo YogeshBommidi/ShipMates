@@ -9,20 +9,14 @@ const Footer = () => {
           <img src={"./header-logo.png"} alt="" />
 
           <div className="footer-accounts">
-            <span className="primaryText">
-              <h4>Account</h4>
-            </span>
+            <span className="primaryText">Developer</span>
             <ul>
-              <li className="secondaryText">Privacy Policy</li>
-              <li className="secondaryText">Terms Of Use</li>
-              <li className="secondaryText">Cookie Policy</li>
-              <li className="secondaryText">Careers</li>
+              <li className="secondaryText">About Developer</li>
+              <li className="secondaryText">ShipMates Code</li>
             </ul>
           </div>
           <div className="footer-socials">
-            <span className="primaryText">
-              <h4>SOCIALS</h4>
-            </span>
+            <span className="primaryText">SOCIALS</span>
             <ul>
               <li className="secondaryText">Instagram</li>
               <li className="secondaryText">LinkedIn</li>

@@ -17,7 +17,8 @@
 .about-container > div {
   display: flex;
   flex-direction: column;
-  padding: 2rem 0rem;
+  padding-top: 1rem;
+  gap: 1rem;
 }
 
 .about-item {
@@ -25,11 +26,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem 5rem;
 }
 
-.about-item span {
+.about-item span :nth-child(1) {
   padding-bottom: 1rem;
+  font-size: 1rem;
 }
 
 .about-container button {
@@ -43,4 +44,10 @@
 
 .about-container button:hover {
   transform: scale(1.05);
+}
+
+@media screen and (max-width : 768px) {
+    .about-container > img{
+      width: 10rem;
+    }
 }

@@ -1,5 +1,7 @@
 .features-wrapper {
   background: var(--pale);
+}
+.features-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,4 +19,11 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .features-cards {
+    grid-template-columns: repeat(1, 1fr);
+    margin: 0rem;
+  }
 }

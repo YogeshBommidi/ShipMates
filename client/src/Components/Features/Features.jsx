@@ -7,7 +7,7 @@ const Features = () => {
     <div className="features-wrapper">
       <div className="paddings innerWidth features-container">
         <span className="primaryText features-head">
-          <h2>Right Trucking Partner for Your Business</h2>
+          Right Trucking Partner for Your Business
         </span>
         <span className="secondaryText features-desc">
           Experience hassle-free online truck booking without wasting money and

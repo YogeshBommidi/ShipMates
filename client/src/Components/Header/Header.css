@@ -78,6 +78,7 @@
 
   .navbar li {
     padding: 0rem 1rem;
+    font-size: 0.9rem;
   }
 
   .navbar li:hover::after,

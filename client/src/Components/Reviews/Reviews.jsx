@@ -29,7 +29,7 @@ const Reviews = () => {
     <div className="review-wrapper">
       <div className="paddings innerWidth review-container">
         <div className="primaryText review-heading">
-          <h2>We're Loved By Our Customers</h2>
+          We're Loved By Our Customers
         </div>
         <div className="review-card-section">
           <Swiper {...sliderSettings}>
