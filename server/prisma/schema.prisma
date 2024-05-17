@@ -26,8 +26,9 @@ model Loads {
     toAddress   String
     image       String
     userEmail   String
-    owner       User         @relation("LoadOwner", fields: [userEmail], references: [email])
+    LoadOwner   User         @relation("LoadOwner", fields: [userEmail], references: [email])
     truckPrices TruckPrice[]
+    isBooked    Boolean      @default(false)
     createdAt   DateTime     @default(now())
     updatedAt   DateTime     @updatedAt
 }
@@ -36,14 +37,12 @@ model Trucks {
     id            String       @id @default(auto()) @map("_id") @db.ObjectId
     driverName    String
     truckEmail    String
-    owner         User         @relation("TruckOwner", fields: [truckEmail], references: [email])
+    TruckOwner    User         @relation("TruckOwner", fields: [truckEmail], references: [email])
     license       String       @unique
     truckCapacity Int
     favLoads      String[]     @db.ObjectId
     bookedLoads   Json[]
     truckPrice    TruckPrice[]
-
-    @@unique(fields: [license, truckEmail])
 }
 
 model TruckPrice {
@@ -53,7 +52,7 @@ model TruckPrice {
     truck           Trucks @relation(fields: [truckId], references: [id])
     truckId         String @db.ObjectId
     truckPriceEmail String
-    owner           User   @relation("TruckPriceOwner", fields: [truckPriceEmail], references: [email])
+    TruckPriceOwner User   @relation("TruckPriceOwner", fields: [truckPriceEmail], references: [email])
     quotedPrice     Int
 
     @@unique(fields: [loadId, truckId])
