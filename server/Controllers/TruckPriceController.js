@@ -2,7 +2,7 @@ import asyncHandler from "express-async-handler";
 import { prisma } from "../Config/prismaConfig.js";
 
 export const bidding = asyncHandler(async (req, res) => {
-  const { loadId, truckId, quotedPrice } = req.body.data;
+  const { loadId, truckId, quotedPrice, truckPriceEmail } = req.body.data;
   try {
     const biddingExists = await prisma.TruckPrice.findUnique({
       where: { loadId_truckId: { loadId: loadId, truckId: truckId } },
@@ -12,6 +12,7 @@ export const bidding = asyncHandler(async (req, res) => {
         data: {
           loadId,
           truckId,
+          truckPriceEmail,
           quotedPrice,
         },
       });

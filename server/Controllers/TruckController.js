@@ -2,7 +2,7 @@ import asyncHandler from "express-async-handler";
 import { prisma } from "../Config/prismaConfig.js";
 
 export const createTruck = asyncHandler(async (req, res) => {
-  const { driverName, truckEmail,license, truckCapacity } = req.body.data; 
+  const { driverName, truckEmail, license, truckCapacity } = req.body.data;
   try {
     const truckExists = await prisma.Trucks.findUnique({
       where: { license: license },

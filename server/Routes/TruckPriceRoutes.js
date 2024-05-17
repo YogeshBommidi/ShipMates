@@ -5,4 +5,4 @@ const router = express.Router();
 
 router.post("/bidding", bidding);
 
-export { router as TruckPriceRouter };
+export { router as TruckPriceRoute };
