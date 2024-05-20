@@ -12,7 +12,7 @@ export const createLoad = asyncHandler(async (req, res) => {
     userEmail,
   } = req.body.data;
   try {
-    const load = await prisma.Loads.create({
+    const load = await prisma.Load.create({
       data: {
         title,
         description,
@@ -20,7 +20,7 @@ export const createLoad = asyncHandler(async (req, res) => {
         fromAddress,
         toAddress,
         image,
-        owner: { connect: { email: userEmail } },
+        loadOwner: { connect: { email: userEmail } },
       },
     });
     res.send({ message: "Load Created Successfully", load });
@@ -31,7 +31,7 @@ export const createLoad = asyncHandler(async (req, res) => {
 
 export const allLoads = asyncHandler(async (req, res) => {
   try {
-    const loads = await prisma.Loads.findMany({
+    const loads = await prisma.Load.findMany({
       orderBy: {
         createdAt: "desc",
       },
@@ -45,7 +45,7 @@ export const allLoads = asyncHandler(async (req, res) => {
 export const loadById = asyncHandler(async (req, res) => {
   try {
     const { id } = req.params;
-    const loadbyid = await prisma.Loads.findUnique({
+    const loadbyid = await prisma.Load.findUnique({
       where: { id: id },
     });
     res.send(loadbyid);

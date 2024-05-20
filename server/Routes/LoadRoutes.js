@@ -4,7 +4,7 @@ import { allLoads, createLoad, loadById } from '../Controllers/LoadControllers.j
 const router = express.Router()
 
 router.post("/createLoad", createLoad)
-router.post("/getAllLoads", allLoads)
+router.get("/getAllLoads", allLoads)
 router.get("/:id", loadById)
 
 export {router as LoadRoute}

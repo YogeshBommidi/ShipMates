@@ -5,7 +5,6 @@ import cookieParser from "cookie-parser";
 import { UserRoute } from "./Routes/UserRoutes.js";
 import { LoadRoute } from "./Routes/LoadRoutes.js";
 import { TruckRoute } from "./Routes/TruckRoutes.js";
-import { TruckPriceRoute } from "./Routes/TruckPriceRoutes.js";
 dotenv.config();
 
 const app = express();
@@ -23,4 +22,3 @@ app.listen(PORT, () => {
 app.use("/api/user", UserRoute);
 app.use("/api/load", LoadRoute);
 app.use("/api/truck", TruckRoute);
-app.use("/api/truckprice", TruckPriceRoute);
