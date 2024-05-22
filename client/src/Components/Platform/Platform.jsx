@@ -1,5 +1,5 @@
 import React from "react";
-import platformData from "../../utils/platform.json";
+import platformData from "../../data/platform.json";
 import "./Platform.css";
 import HomeCards from "../HomeCards/HomeCards";
 

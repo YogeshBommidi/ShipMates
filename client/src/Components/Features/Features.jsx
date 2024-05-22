@@ -1,6 +1,6 @@
 import React from "react";
 import "./Features.css";
-import featuresData from "../../utils/Features-data.json";
+import featuresData from "../../data/Features-data.json";
 import HomeCards from "../HomeCards/HomeCards";
 const Features = () => {
   return (

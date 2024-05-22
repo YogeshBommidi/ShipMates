@@ -1,5 +1,5 @@
 import React from "react";
-import brandsData from "../../utils/brands.json";
+import brandsData from "../../data/brands.json";
 import "./Brands.css";
 const Brands = () => {
   return (

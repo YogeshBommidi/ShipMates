@@ -1,63 +1,59 @@
-import React, { useEffect, useReducer, useRef, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BiMenuAltRight } from "react-icons/bi";
 import { GiCancel } from "react-icons/gi";
 import OutsideClickHandler from "react-outside-click-handler";
+import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const mobile = window.innerWidth <= 768 ? true : false;
-
   const [menuOpened, setMenuOpened] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <div className="header-wrapper">
       <div className="innerWidth header-container">
-        <a href="">
+        <Link to="/">
           <img src="./header-logo.png" alt="logo" />
-        </a>
+        </Link>
         <OutsideClickHandler onOutsideClick={() => setMenuOpened(false)}>
-          {menuOpened === false && mobile === true ? (
-            <div onClick={() => setMenuOpened(!menuOpened)}>
-              <BiMenuAltRight size={30} />
+          {menuOpened === false && isMobile ? (
+            <div
+              onClick={() => setMenuOpened(!menuOpened)}
+              className="menu-icon"
+            >
+              <BiMenuAltRight size={35} />
             </div>
           ) : (
             <div className="header-menu">
-              <div>
-                {menuOpened === true ? (
+              {menuOpened && isMobile ? (
+                <div className="close-icon">
                   <GiCancel size={30} onClick={() => setMenuOpened(false)} />
-                ) : null}
-              </div>
-              <ul className="navbar">
-                <li
-                  className={activeIndex === 0 ? "active" : ""}
-                  onClick={() => setActiveIndex(0)}
-                >
-                  HOME
-                </li>
-                <li
-                  className={activeIndex === 1 ? "active" : ""}
-                  onClick={() => setActiveIndex(1)}
-                >
-                  MEMBERSHIP
-                </li>
-                <li
-                  className={activeIndex === 2 ? "active" : ""}
-                  onClick={() => setActiveIndex(2)}
-                >
-                  MARKET PLACE
-                </li>
-                <li
-                  className={activeIndex === 3 ? "active" : ""}
-                  onClick={() => setActiveIndex(3)}
-                >
-                  TRANSPORT DIRECTORY
-                </li>
-                <li>
-                  <button className="btn">LOGIN/SIGNUP</button>
-                </li>
-              </ul>
+                </div>
+              ) : null}
+              <NavLink to="/MarketPlace" onClick={() => setMenuOpened(false)}>
+                Market Place
+              </NavLink>
+              <a
+                href="mailto:yogeshbommidi@gmail.com"
+                onClick={() => setMenuOpened(false)}
+              >
+                Contact Us
+              </a>
+              <button className="btn" onClick={() => setMenuOpened(false)}>
+                Login
+              </button>
             </div>
           )}
         </OutsideClickHandler>

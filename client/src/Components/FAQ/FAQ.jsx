@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "react-accessible-accordion/dist/fancy-example.css";
 import { MdOutlineArrowDropDown } from "react-icons/md";
-import faqData from "../../utils/faq.json";
+import faqData from "../../data/faq.json";
 import "./FAQ.css";
 
 const FAQ = () => {

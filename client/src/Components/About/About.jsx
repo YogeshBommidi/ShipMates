@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import aboutData from "../../utils/about.json";
+import aboutData from "../../data/about.json";
 import "./About.css";
 
 const paragraphStyles = {
