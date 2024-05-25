@@ -7,7 +7,8 @@ import MarketPlace from "./Pages/MarketPlace/MarketPlace";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ToastContainer } from "react-toastify";
 import { ReactQueryDevtools } from "react-query/devtools";
-import "react-toastify/dist/ReactToastify.css"
+import "react-toastify/dist/ReactToastify.css";
+import Load from "./Pages/Load/Load";
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -18,7 +19,10 @@ const App = () => {
           <Routes>
             <Route element={<Layout />}>
               <Route path="/" element={<Website />} />
-              <Route path="/MarketPlace" element={<MarketPlace />} />
+              <Route path="/MarketPlace">
+                <Route index element={<MarketPlace />} />
+                <Route path=":loadId" element={<Load />} />
+              </Route>
             </Route>
           </Routes>
         </Suspense>
