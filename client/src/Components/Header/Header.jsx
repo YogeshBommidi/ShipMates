@@ -4,10 +4,13 @@ import { GiCancel } from "react-icons/gi";
 import OutsideClickHandler from "react-outside-click-handler";
 import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
+import { useAuth0 } from "@auth0/auth0-react";
+import ProfileMenu from "../ProfileMenu/ProfileMenu";
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const { loginWithRedirect, isAuthenticated, user, logout } = useAuth0();
 
   useEffect(() => {
     const handleResize = () => {
@@ -51,9 +54,13 @@ const Header = () => {
               >
                 Contact Us
               </a>
-              <button className="btn" onClick={() => setMenuOpened(false)}>
-                Login
-              </button>
+              {!isAuthenticated ? (
+                <button className="btn" onClick={loginWithRedirect}>
+                  Login
+                </button>
+              ) : (
+                <ProfileMenu user={user} logout={logout} />
+              )}
             </div>
           )}
         </OutsideClickHandler>

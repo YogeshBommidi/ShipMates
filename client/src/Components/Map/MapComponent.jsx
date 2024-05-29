@@ -68,6 +68,7 @@ const MapComponent = ({ fromAddress, toAddress }) => {
       center={position}
       zoom={5}
       style={{ height: "17.5rem", width: "100%" }}
+      scrollWheelZoom = {false}
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       {coords.start && <Marker position={coords.start} />}

@@ -35,3 +35,20 @@ export const getLoad = async (id) => {
     throw err;
   }
 };
+
+export const createUser = async (email, token) => {
+  try {
+    await api.post(
+      "/user/registerUser",
+      { email },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+  } catch (error) {
+    toast.error("Something went wrong, Please try again");
+    throw error;
+  }
+};

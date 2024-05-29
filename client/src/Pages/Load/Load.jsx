@@ -14,7 +14,6 @@ const Load = () => {
   const { data, isLoading, isError } = useQuery(["resd", id], () =>
     getLoad(id)
   );
-  console.log(data);
 
   if (isError) {
     return (

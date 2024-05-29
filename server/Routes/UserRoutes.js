@@ -6,10 +6,11 @@ import {
   userLoads,
   userTrucks,
 } from "../Controllers/UserControllers.js";
+import jwtCheck from "../Config/auth0Config.js";
 
 const router = express.Router();
 
-router.post("/registerUser", registerUser);
+router.post("/registerUser", jwtCheck, registerUser);
 router.get("/getAllUserLoads", userLoads);
 router.get("/getAllUserTrucks", userTrucks);
 router.get("/:loadId", truckPrice);
