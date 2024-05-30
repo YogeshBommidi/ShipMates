@@ -52,3 +52,43 @@ export const createUser = async (email, token) => {
     throw error;
   }
 };
+
+export const bookLoad = async (quotedPrice, loadId, email, token) => {
+  try {
+    await api.post(
+      `/truck/bidForLoad/${loadId}`,
+      {
+        loadId: loadId,
+        quotedPrice: quotedPrice,
+        truckPriceEmail: email,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+  } catch (error) {
+    toast.error("Something went wrong in Bidding");
+    throw error;
+  }
+};
+
+export const removeBidding = async (id, email, token) => {
+  try {
+    await api.post(
+      `/truck/cancelBid/${id}`,
+      {
+        truckPriceEmail : email,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+  } catch (error) {
+    toast.error("Something went wrong, removeBooking error");
+    throw error;
+  }
+};

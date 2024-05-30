@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./Load.css";
-import { useQuery } from "react-query";
+import { useQuery, useMutation } from "react-query";
 import { useLocation } from "react-router-dom";
-import { getLoad } from "../../utils/api";
+import { getLoad, removeBidding } from "../../utils/api";
 import { PuffLoader } from "react-spinners";
 import { HiHeart } from "react-icons/hi";
 import { MdLocationPin } from "react-icons/md";
 import MapComponent from "../../Components/Map/MapComponent";
+import useAuthCheck from "../../Hooks/useAuthCheck";
+import { useAuth0 } from "@auth0/auth0-react";
+import BookingModal from "../../Components/BookingModal/BookingModal";
+import { Button, MantineProvider } from "@mantine/core";
+import UserDetailContext from "../../Components/Context/UserDetailContext";
+import { toast } from "react-toastify";
 
 const Load = () => {
   const { pathname } = useLocation();
@@ -14,6 +20,25 @@ const Load = () => {
   const { data, isLoading, isError } = useQuery(["resd", id], () =>
     getLoad(id)
   );
+  const [modalOpened, setModalOpened] = useState(false);
+  const { validateLogin } = useAuthCheck();
+  const { user } = useAuth0();
+  const {
+    userDetails: { token, bids },
+    setUserDetails,
+  } = useContext(UserDetailContext);
+
+  const { mutate: cancelBiding, isLoading: cancelling } = useMutation({
+    mutationFn: () => removeBidding(id, user?.email, token),
+    onSuccess: () => {
+      setUserDetails((prev) => ({
+        ...prev,
+        bids: prev.bids.filter((bids) => bids.loadId !== id),
+      }));
+
+      toast.success("Booking cancelled", { position: "bottom-right" });
+    },
+  });
 
   if (isError) {
     return (
@@ -66,9 +91,42 @@ const Load = () => {
               <MdLocationPin size={25} />
               {data.toAddress}
             </div>
-            <button className="btn">Bid Your Price</button>
+            {bids?.map((bids) => bids.loadId).includes(id) ? (
+              <MantineProvider>
+                <div>
+                  <Button
+                    variant="outline"
+                    w={"100%"}
+                    color="red"
+                    onClick={() => cancelBiding()}
+                    disabled={cancelling}
+                  >
+                    <span>Cancel Booking</span>
+                  </Button>
+                  <span>
+                    Your visit already bidded for price :
+                    {bids.filter((bids) => bids.loadId === id)[0].quotedPrice}
+                  </span>
+                </div>
+              </MantineProvider>
+            ) : (
+              <button
+                className="btn"
+                onClick={() => {
+                  validateLogin() && setModalOpened(true);
+                }}
+              >
+                Bid Your Price
+              </button>
+            )}
+            <BookingModal
+              opened={modalOpened}
+              setOpened={setModalOpened}
+              loadId={id}
+              email={user?.email}
+            />
           </div>
-          <div className="detail-right">
+          <div className="detail-right" style={{ zIndex: "0" }}>
             <MapComponent
               fromAddress={data.fromAddress}
               toAddress={data.toAddress}

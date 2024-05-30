@@ -28,7 +28,7 @@ export const registerTruck = asyncHandler(async (req, res) => {
 
 export const bidForLoad = asyncHandler(async (req, res) => {
   const { loadId } = req.params;
-  const { quotedPrice, truckPriceEmail } = req.body.data;
+  const { quotedPrice, truckPriceEmail, } = req.body;
 
   try {
     const booked = await prisma.load.findUnique({

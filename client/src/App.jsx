@@ -15,7 +15,7 @@ const App = () => {
   const queryClient = new QueryClient();
   const [userDetails, setUserDetails] = useState({
     favourities: [],
-    bookings: [],
+    bids: [],
     token: null,
   });
   return (

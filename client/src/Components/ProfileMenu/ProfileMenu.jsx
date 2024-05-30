@@ -1,17 +1,31 @@
 import React from "react";
-import { Menu, Avatar, MantineProvider } from "@mantine/core";
+import { Avatar, MantineProvider, Menu } from "@mantine/core";
 import "@mantine/core/styles.css";
+import { useNavigate } from "react-router-dom";
 
 const ProfileMenu = ({ user, logout }) => {
+  const navigate = useNavigate();
   return (
     <MantineProvider>
       <Menu>
         <Menu.Target>
-          <Avatar src={user.picture} alt="user image" radius={"xl"} />
+          <Avatar
+            variant="filled"
+            radius="xl"
+            size="md"
+            color="orange"
+            src=""
+          />
         </Menu.Target>
         <Menu.Dropdown>
-          <Menu.Item>Favourities</Menu.Item>
-          <Menu.Item>Bookings</Menu.Item>
+          <Menu.Item
+            onClick={() => navigate("./favourities", { replace: true })}
+          >
+            Favourities
+          </Menu.Item>
+          <Menu.Item onClick={() => navigate("./bookings", { replace: true })}>
+            Bookings
+          </Menu.Item>
           <Menu.Item
             onClick={() => {
               localStorage.clear();
