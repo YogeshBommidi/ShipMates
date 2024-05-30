@@ -11,9 +11,9 @@ import jwtCheck from "../Config/auth0Config.js";
 const router = express.Router();
 
 router.post("/registerUser", jwtCheck, registerUser);
-router.get("/getAllUserLoads", userLoads);
-router.get("/getAllUserTrucks", userTrucks);
-router.get("/:loadId", truckPrice);
-router.post("/:loadId/selectTruck", selectTruck);
+router.get("/getAllUserLoads", jwtCheck, userLoads);
+router.get("/getAllUserTrucks", jwtCheck, userTrucks);
+router.get("/:loadId", jwtCheck, truckPrice);
+router.post("/:loadId/selectTruck", jwtCheck, selectTruck);
 
 export { router as UserRoute };

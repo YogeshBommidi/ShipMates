@@ -12,12 +12,12 @@ import jwtCheck from "../Config/auth0Config.js";
 
 const router = express.Router();
 
-router.post("/registerTruck", registerTruck);
+router.post("/registerTruck", jwtCheck, registerTruck);
 router.post("/bidForLoad/:loadId", jwtCheck, bidForLoad);
-router.get("/getAllBids", getAllBids);
-router.post("/cancelBid/:loadId",jwtCheck, cancelBid);
-router.post("/toFav/:loadId", toFav);
-router.get("/getAllFav", getAllFav);
-router.get("/getAllBookings", getAllBookings);
+router.get("/getAllBids", jwtCheck, getAllBids);
+router.post("/cancelBid/:loadId", jwtCheck, cancelBid);
+router.post("/toFav/:loadId", jwtCheck, toFav);
+router.get("/getAllFav", jwtCheck, getAllFav);
+router.get("/getAllBookings", jwtCheck, getAllBookings);
 
 export { router as TruckRoute };
