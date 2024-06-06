@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
 import "./Reviews.css";
 import reviewsData from "../../data/reviews.json";
-import { sliderSettings } from "../../data/common";
+import { sliderSettings } from "../../utils/common";
 
 const paragraphStyles = {
   WebkitLineClamp: 3,

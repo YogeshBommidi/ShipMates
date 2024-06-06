@@ -4,7 +4,6 @@ import { useQuery, useMutation } from "react-query";
 import { useLocation } from "react-router-dom";
 import { getLoad, removeBidding } from "../../utils/api";
 import { PuffLoader } from "react-spinners";
-import { HiHeart } from "react-icons/hi";
 import { MdLocationPin } from "react-icons/md";
 import MapComponent from "../../Components/Map/MapComponent";
 import useAuthCheck from "../../Hooks/useAuthCheck";
@@ -13,6 +12,7 @@ import BookingModal from "../../Components/BookingModal/BookingModal";
 import { Button, MantineProvider } from "@mantine/core";
 import UserDetailContext from "../../Components/Context/UserDetailContext";
 import { toast } from "react-toastify";
+import Heart from "../../Components/Heart/Heart";
 
 const Load = () => {
   const { pathname } = useLocation();
@@ -65,7 +65,7 @@ const Load = () => {
     <div className="load-wrapper">
       <div className="paddings innerWidth load-container">
         <div className="like">
-          <HiHeart color="black" size={20} />
+          <Heart id={id} />
         </div>
         <img src={data?.image} alt="Load Image" />
         <div className="load-details">

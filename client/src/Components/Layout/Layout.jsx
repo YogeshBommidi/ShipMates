@@ -6,8 +6,12 @@ import { useAuth0 } from "@auth0/auth0-react";
 import UserDetailContext from "../Context/UserDetailContext";
 import { useMutation } from "react-query";
 import { createUser } from "../../utils/api";
+import useFavourities from "../../Hooks/useFavourities";
+import useBids from "../../Hooks/useBids";
 
 const Layout = () => {
+  useFavourities();
+  useBids();
   const { isAuthenticated, user, getAccessTokenSilently } = useAuth0();
   const { setUserDetails } = useContext(UserDetailContext);
 

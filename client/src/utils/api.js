@@ -79,7 +79,7 @@ export const removeBidding = async (id, email, token) => {
     await api.post(
       `/truck/cancelBid/${id}`,
       {
-        truckPriceEmail : email,
+        truckPriceEmail: email,
       },
       {
         headers: {
@@ -90,5 +90,66 @@ export const removeBidding = async (id, email, token) => {
   } catch (error) {
     toast.error("Something went wrong, removeBooking error");
     throw error;
+  }
+};
+
+export const toFav = async (id, email, token) => {
+  try {
+    await api.post(
+      `/truck/toFav/${id}`,
+      {
+        loadId: id,
+        truckEmail: email,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+  } catch (error) {
+    toast.error("Something went wrong, to favourites error");
+    throw error;
+  }
+};
+
+export const getAllFav = async (email, token) => {
+  if (!token) return;
+  try {
+    const res = await api.post(
+      "/truck/getAllFav",
+      {
+        truckEmail: email,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    return res.data.favLoads;
+  } catch (error) {
+    toast.error("Something went wrong, getAllFav error");
+    throw error;
+  }
+};
+
+export const getAllBids = async (email, token) => {
+  if (!token) return;
+  try {
+    const res = await api.post(
+      "/truck/getAllBids",
+      {
+        truckPriceEmail: email,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    return res.data;
+  } catch (err) {
+    toast.error("Something went wrong, getAllBids error");
   }
 };

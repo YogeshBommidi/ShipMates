@@ -1,18 +1,22 @@
-import React, { useState } from "react";
-import "./MarketPlace.css";
+import React, { useContext, useState } from "react";
+import "../MarketPlace/MarketPlace.css";
 import Searchbar from "../../Components/SearchBar/Searchbar";
 import useLoads from "../../Hooks/useLoads";
 import { PuffLoader } from "react-spinners";
 import LoadCard from "../../Components/loadCard/LoadCard";
+import UserDetailContext from "../../Components/Context/UserDetailContext";
 
-const Markets = () => {
+const Favourities = () => {
   const { data, isError, isLoading } = useLoads();
   const [filter, setFilter] = useState("");
+  const {
+    userDetails: { favourities },
+  } = useContext(UserDetailContext);
 
   if (isError) {
     return (
       <div className="wrapper">
-        <span>Error While Fetching the Market Data</span>
+        <span>Error While Fetching the Favourities</span>
       </div>
     );
   }
@@ -37,6 +41,7 @@ const Markets = () => {
         <Searchbar filter={filter} setFilter={setFilter} />
         <div className="paddings innerWidth Loads">
           {data
+            .filter((loads) => favourities?.includes(loads.id))
             .filter(
               (loads) =>
                 loads.title.toLowerCase().includes(filter.toLowerCase()) ||
@@ -54,4 +59,4 @@ const Markets = () => {
   );
 };
 
-export default Markets;
+export default Favourities;

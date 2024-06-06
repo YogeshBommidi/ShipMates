@@ -10,6 +10,8 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import "react-toastify/dist/ReactToastify.css";
 import Load from "./Pages/Load/Load";
 import UserDetailContext from "./Components/Context/UserDetailContext";
+import Favourities from "./Pages/Favourities/Favourities";
+import Bids from "./Pages/Bids/Bids";
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -30,6 +32,8 @@ const App = () => {
                   <Route index element={<MarketPlace />} />
                   <Route path=":loadId" element={<Load />} />
                 </Route>
+                <Route path="/favourities" element={<Favourities/>}/>
+                <Route path="/bids" element={<Bids/>}/>
               </Route>
             </Routes>
           </Suspense>

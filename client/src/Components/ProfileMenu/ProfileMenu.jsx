@@ -17,14 +17,14 @@ const ProfileMenu = ({ user, logout }) => {
             src=""
           />
         </Menu.Target>
-        <Menu.Dropdown>
+        <Menu.Dropdown style={{background: "#F6F1EE"}}>
           <Menu.Item
             onClick={() => navigate("./favourities", { replace: true })}
           >
             Favourities
           </Menu.Item>
-          <Menu.Item onClick={() => navigate("./bookings", { replace: true })}>
-            Bookings
+          <Menu.Item onClick={() => navigate("./bids", { replace: true })}>
+            Bids
           </Menu.Item>
           <Menu.Item
             onClick={() => {

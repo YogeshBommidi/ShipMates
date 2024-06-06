@@ -14,10 +14,10 @@ const router = express.Router();
 
 router.post("/registerTruck", jwtCheck, registerTruck);
 router.post("/bidForLoad/:loadId", jwtCheck, bidForLoad);
-router.get("/getAllBids", jwtCheck, getAllBids);
+router.post("/getAllBids", jwtCheck, getAllBids);
 router.post("/cancelBid/:loadId", jwtCheck, cancelBid);
 router.post("/toFav/:loadId", jwtCheck, toFav);
-router.get("/getAllFav", jwtCheck, getAllFav);
-router.get("/getAllBookings", jwtCheck, getAllBookings);
+router.post("/getAllFav",jwtCheck, getAllFav);
+router.post("/getAllBookings", jwtCheck, getAllBookings);
 
 export { router as TruckRoute };

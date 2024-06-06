@@ -2,10 +2,10 @@ import React, { useContext, useState } from "react";
 import { MantineProvider, Modal, Button, NumberInput } from "@mantine/core";
 import { DatePicker } from "@mantine/dates";
 import "@mantine/dates/styles.css";
-import UserDetailContext from "../Context/UserDetailContext";
 import { useMutation } from "react-query";
 import { bookLoad } from "../../utils/api";
 import { toast } from "react-toastify";
+import UserDetailContext from "../Context/UserDetailContext";
 
 const BookingModal = ({ opened, setOpened, loadId, email }) => {
   const [value, setValue] = useState(null);
@@ -19,7 +19,7 @@ const BookingModal = ({ opened, setOpened, loadId, email }) => {
     setUserDetails((prev) => ({
       ...prev,
       bids: [
-        ...prev.bids,
+        ...(prev.bids || []),
         {
           loadId: loadId,
           quotedPrice: value,

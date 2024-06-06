@@ -30,40 +30,35 @@ const Header = () => {
         <Link to="/">
           <img src="./header-logo.png" alt="logo" />
         </Link>
-        <OutsideClickHandler onOutsideClick={() => setMenuOpened(false)}>
-          {menuOpened === false && isMobile ? (
-            <div
-              onClick={() => setMenuOpened(!menuOpened)}
-              className="menu-icon"
+        {menuOpened === false && isMobile ? (
+          <div onClick={() => setMenuOpened(!menuOpened)} className="menu-icon">
+            <BiMenuAltRight size={35} />
+          </div>
+        ) : (
+          <div className="header-menu">
+            {menuOpened && isMobile ? (
+              <div className="close-icon">
+                <GiCancel size={30} onClick={() => setMenuOpened(false)} />
+              </div>
+            ) : null}
+            <NavLink to="/MarketPlace" onClick={() => setMenuOpened(false)}>
+              Market Place
+            </NavLink>
+            <a
+              href="mailto:yogeshbommidi@gmail.com"
+              onClick={() => setMenuOpened(false)}
             >
-              <BiMenuAltRight size={35} />
-            </div>
-          ) : (
-            <div className="header-menu">
-              {menuOpened && isMobile ? (
-                <div className="close-icon">
-                  <GiCancel size={30} onClick={() => setMenuOpened(false)} />
-                </div>
-              ) : null}
-              <NavLink to="/MarketPlace" onClick={() => setMenuOpened(false)}>
-                Market Place
-              </NavLink>
-              <a
-                href="mailto:yogeshbommidi@gmail.com"
-                onClick={() => setMenuOpened(false)}
-              >
-                Contact Us
-              </a>
-              {!isAuthenticated ? (
-                <button className="btn" onClick={loginWithRedirect}>
-                  Login
-                </button>
-              ) : (
-                <ProfileMenu user={user} logout={logout} />
-              )}
-            </div>
-          )}
-        </OutsideClickHandler>
+              Contact Us
+            </a>
+            {!isAuthenticated ? (
+              <button className="btn" onClick={loginWithRedirect}>
+                Login
+              </button>
+            ) : (
+              <ProfileMenu user={user} logout={logout} />
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
