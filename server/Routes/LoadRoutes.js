@@ -8,7 +8,7 @@ import jwtCheck from "../Config/auth0Config.js";
 
 const router = express.Router();
 
-router.post("/createLoad", jwtCheck, createLoad);
+router.post("/createLoad",  createLoad);
 router.get("/getAllLoads", allLoads);
 router.get("/:id", loadById);
 

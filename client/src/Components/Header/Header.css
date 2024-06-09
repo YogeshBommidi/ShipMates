@@ -25,6 +25,7 @@
   transition: all 300ms ease-in-out;
   font-size: large;
   font-weight: bold;
+  color: var(--darkGrey);
 }
 
 a {
@@ -32,13 +33,15 @@ a {
   text-decoration: none;
 }
 
-.header-menu > a:hover {
+.header-menu > a:hover,
+.header-menu > div:hover {
   cursor: pointer;
   color: var(--orange);
   transform: scale(1.05);
 }
 
-.header-menu > a:hover::after {
+.header-menu > a:hover::after,
+.header-menu > div:hover::after {
   content: "";
   width: 45%;
   height: 2px;

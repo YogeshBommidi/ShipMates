@@ -29,11 +29,8 @@ export const checkFavourities = (id, favourities) => {
   return favourities?.includes(id) ? "#fa3e5f" : "white";
 };
 
-
-/**export const updateFavourities = (id, favourities) => {
-  if (favourities.includes(id)) {
-    return favourities.filter((resId) => resId !== id);
-  } else {
-    return [...favourities, id];
-  }
-}; */
+export const validateString = (value) => {
+  return value?.length < 1 || value === null
+    ? "Field should not be empty"
+    : null;
+};

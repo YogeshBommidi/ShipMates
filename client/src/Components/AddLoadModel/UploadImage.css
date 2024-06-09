@@ -1,0 +1,32 @@
+.upload-wrapper {
+  margin-top: 3rem;
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.uploadZone {
+  width: 80%;
+  height: 25rem;
+  cursor: pointer;
+  border: 2px dashed grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.uploadedImage {
+  width: auto;
+  height: 25rem;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.uploadedImage > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

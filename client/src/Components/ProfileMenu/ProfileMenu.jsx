@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Avatar, MantineProvider, Menu } from "@mantine/core";
 import "@mantine/core/styles.css";
 import { useNavigate } from "react-router-dom";
@@ -7,7 +7,7 @@ const ProfileMenu = ({ user, logout }) => {
   const navigate = useNavigate();
   return (
     <MantineProvider>
-      <Menu>
+      <Menu trigger="hover" openDelay={100} closeDelay={400}>
         <Menu.Target>
           <Avatar
             variant="filled"
@@ -17,7 +17,7 @@ const ProfileMenu = ({ user, logout }) => {
             src=""
           />
         </Menu.Target>
-        <Menu.Dropdown style={{background: "#F6F1EE"}}>
+        <Menu.Dropdown style={{ background: "#F6F1EE" }}>
           <Menu.Item
             onClick={() => navigate("./favourities", { replace: true })}
           >
@@ -26,11 +26,15 @@ const ProfileMenu = ({ user, logout }) => {
           <Menu.Item onClick={() => navigate("./bids", { replace: true })}>
             Bids
           </Menu.Item>
+          
+          <Menu.Divider />
+
           <Menu.Item
             onClick={() => {
               localStorage.clear();
               logout();
             }}
+            color="red"
           >
             logout
           </Menu.Item>

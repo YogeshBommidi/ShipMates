@@ -117,7 +117,7 @@ export const getAllFav = async (email, token) => {
   if (!token) return;
   try {
     const res = await api.post(
-      "/truck/getAllFav",
+      `/truck/getAllFav`,
       {
         truckEmail: email,
       },
@@ -138,7 +138,7 @@ export const getAllBids = async (email, token) => {
   if (!token) return;
   try {
     const res = await api.post(
-      "/truck/getAllBids",
+      `/truck/getAllBids`,
       {
         truckPriceEmail: email,
       },
@@ -151,5 +151,24 @@ export const getAllBids = async (email, token) => {
     return res.data;
   } catch (err) {
     toast.error("Something went wrong, getAllBids error");
+  }
+};
+
+export const createLoad = async (data, token) => {
+  try {
+    const res = await api.post(
+      `/load/createLoad`,
+      {
+        data,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+  } catch (error) {
+    toast.error("Something went wrong, creating loads");
+    throw error;
   }
 };
