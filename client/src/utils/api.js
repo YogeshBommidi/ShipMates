@@ -172,3 +172,22 @@ export const createLoad = async (data, token) => {
     throw error;
   }
 };
+
+export const createTruck = async (data, token) => {
+  try {
+    const res = await api.post(
+      `/truck/registerTruck`,
+      {
+        data,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+  } catch (error) {
+    toast.error("Something went wrong, creating truck");
+    throw error;
+  }
+};

@@ -24,7 +24,13 @@ const ProfileMenu = ({ user, logout }) => {
             Favourities
           </Menu.Item>
           <Menu.Item onClick={() => navigate("./bids", { replace: true })}>
-            Bids
+            My Bids
+          </Menu.Item>
+          <Menu.Item>
+            My Loads
+          </Menu.Item>
+          <Menu.Item>
+            My Trucks
           </Menu.Item>
           
           <Menu.Divider />

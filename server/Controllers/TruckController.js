@@ -3,7 +3,7 @@ import { prisma } from "../Config/prismaConfig.js";
 import { json } from "express";
 
 export const registerTruck = asyncHandler(async (req, res) => {
-  const { driverName, truckEmail, license, truckCapacity } = req.body.data;
+  const { driverName, truckEmail, license, truckCapacity, image } = req.body.data;
   try {
     const truckExists = await prisma.Truck.findUnique({
       where: { license: license },
@@ -15,6 +15,7 @@ export const registerTruck = asyncHandler(async (req, res) => {
           truckOwner: { connect: { email: truckEmail } },
           license,
           truckCapacity,
+          image
         },
       });
       res.send({ message: "Truck Created Successfully" });

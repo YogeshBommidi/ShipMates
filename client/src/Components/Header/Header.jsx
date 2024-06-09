@@ -6,20 +6,27 @@ import "./Header.css";
 import { useAuth0 } from "@auth0/auth0-react";
 import ProfileMenu from "../ProfileMenu/ProfileMenu";
 import AddLoadModel from "../AddLoadModel/AddLoadModel";
-import useAuthCheck from "../../Hooks/useAuthCheck"
+import useAuthCheck from "../../Hooks/useAuthCheck";
+import AddTruckModal from "../AddTruckModal/AddTruckModal";
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const { loginWithRedirect, isAuthenticated, user, logout } = useAuth0();
   const [loadModelOpened, setLoadModelOpened] = useState(false);
-  const {validateLogin} = useAuthCheck()
-  const handleAddLoadClick =() => {
-    if(validateLogin()){
-      setLoadModelOpened(true)
+  const [truckModalOpened, setTruckModalOpened] = useState(false);
+  const { validateLogin } = useAuthCheck();
+  const handleAddLoadClick = () => {
+    if (validateLogin()) {
+      setLoadModelOpened(true);
     }
-  }
+  };
 
+  const handleAddLoadModal = () => {
+    if (validateLogin()) {
+      setTruckModalOpened(true);
+    }
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -58,7 +65,11 @@ const Header = () => {
               loadOpened={loadModelOpened}
               setLoadOpened={setLoadModelOpened}
             />
-            <div>Add Truck</div>
+            <div onClick={handleAddLoadModal}>Add Truck</div>
+            <AddTruckModal
+              truckOpened={truckModalOpened}
+              setTruckOpened={setTruckModalOpened}
+            />
             <a
               href="mailto:yogeshbommidi@gmail.com"
               onClick={() => setMenuOpened(false)}

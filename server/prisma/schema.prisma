@@ -1,10 +1,10 @@
 generator client {
-    provider = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 datasource db {
-    provider = "mongodb"
-    url      = env("DATABASE_URL")
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
 }
 
 model User {
@@ -29,7 +29,7 @@ model Load {
   loadOwner   User         @relation("loadOwner", fields: [userEmail], references: [email])
   truckPrices TruckPrice[]
   isBooked    Boolean      @default(false)
-  truckId     String?      @db.ObjectId  // Ensure this is of type ObjectId
+  truckId     String?      @db.ObjectId // Ensure this is of type ObjectId
   truck       Truck?       @relation(fields: [truckId], references: [id]) // Relation to Truck
   createdAt   DateTime     @default(now())
   updatedAt   DateTime     @updatedAt
@@ -42,9 +42,10 @@ model Truck {
   truckOwner    User         @relation("truckOwner", fields: [truckEmail], references: [email])
   license       String       @unique
   truckCapacity Int
+  image         String?
   favLoads      String[]     @db.ObjectId
   bookedLoads   Json[]
-  loads         Load[]       @relation  // No fields or references here
+  loads         Load[]       @relation // No fields or references here
   truckPrice    TruckPrice[]
 }
 
