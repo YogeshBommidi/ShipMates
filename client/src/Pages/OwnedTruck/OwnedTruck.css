@@ -1,0 +1,44 @@
+.ownedtruck-wrapper {
+  background: var(--darkPale);
+}
+
+.ownedtruck-container {
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: auto auto;
+}
+
+.ownedtruck-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ownedtruck-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .ownedtruck-container {
+    grid-template-columns: auto;
+    gap: 2rem;
+  }
+
+  .ownedtruck-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ownedtruck-right img {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+  }
+}

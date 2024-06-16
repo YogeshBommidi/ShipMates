@@ -32,9 +32,21 @@ export const userLoads = asyncHandler(async (req, res) => {
 export const userTrucks = asyncHandler(async (req, res) => {
   const { email } = req.body;
   try {
-    const userload = await prisma.User.findMany({
-      where: { email },
-      select: { ownedTrucks: true },
+    const truck = await prisma.Truck.findFirst({
+      where: { truckEmail: email },
+      select: { id: true },
+    });
+
+    if (!truck) {
+      res.status(404).json({
+        message: "No Truck Found for this email",
+      });
+    }
+
+    const { id: truckId } = truck;
+
+    const userload = await prisma.Truck.findUnique({
+      where: { id: truckId },
     });
     res.send(userload);
   } catch (err) {

@@ -12,12 +12,14 @@ import Load from "./Pages/Load/Load";
 import UserDetailContext from "./Components/Context/UserDetailContext";
 import Favourities from "./Pages/Favourities/Favourities";
 import Bids from "./Pages/Bids/Bids";
+import OwnedTruck from "./Pages/OwnedTruck/OwnedTruck";
 
 const App = () => {
   const queryClient = new QueryClient();
   const [userDetails, setUserDetails] = useState({
     favourities: [],
     bids: [],
+    loads: [],
     token: null,
   });
   return (
@@ -32,8 +34,9 @@ const App = () => {
                   <Route index element={<MarketPlace />} />
                   <Route path=":loadId" element={<Load />} />
                 </Route>
-                <Route path="/favourities" element={<Favourities/>}/>
-                <Route path="/bids" element={<Bids/>}/>
+                <Route path="/favourities" element={<Favourities />} />
+                <Route path="/bids" element={<Bids />} />
+                <Route path="/ownedTruck" element={<OwnedTruck/>} />
               </Route>
             </Routes>
           </Suspense>

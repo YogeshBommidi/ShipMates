@@ -191,3 +191,20 @@ export const createTruck = async (data, token) => {
     throw error;
   }
 };
+
+export const getOwnedTruck = async (email, token) => {
+  try {
+    const res = await api.get('/user/getAllUserTrucks', {
+      params: {
+        email, // Pass the email as a query parameter
+      },
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return res.data; // Return the data instead of the entire response
+  } catch (error) {
+    toast.error("Something went wrong, getAllUserTrucks error");
+    throw error;
+  }
+};

@@ -17,7 +17,7 @@ import Heart from "../../Components/Heart/Heart";
 const Load = () => {
   const { pathname } = useLocation();
   const id = pathname.split("/").slice(-1)[0];
-  const { data, isLoading, isError } = useQuery(["resd", id], () =>
+  const { data, isLoading, isError } = useQuery(["load", id], () =>
     getLoad(id)
   );
   const [modalOpened, setModalOpened] = useState(false);
