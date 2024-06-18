@@ -13,6 +13,7 @@ import UserDetailContext from "./Components/Context/UserDetailContext";
 import Favourities from "./Pages/Favourities/Favourities";
 import Bids from "./Pages/Bids/Bids";
 import OwnedTruck from "./Pages/OwnedTruck/OwnedTruck";
+import OwnedLoads from "./Pages/OwnedLoads/OwnedLoads";
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -36,7 +37,8 @@ const App = () => {
                 </Route>
                 <Route path="/favourities" element={<Favourities />} />
                 <Route path="/bids" element={<Bids />} />
-                <Route path="/ownedTruck" element={<OwnedTruck/>} />
+                <Route path="/ownedTruck" element={<OwnedTruck />} />
+                <Route path="/ownedLoads" element={<OwnedLoads />} />
               </Route>
             </Routes>
           </Suspense>

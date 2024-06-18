@@ -1,0 +1,9 @@
+.owned-loads-wrapper{
+    background: var(--darkPale);
+}
+
+.owned-loads-data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

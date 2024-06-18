@@ -1,4 +1,4 @@
-.load-card {
+.owned-load-card {
   display: flex;
   justify-content: center;
   align-items: start;
@@ -17,9 +17,9 @@
   height: 10rem;
   border-radius: 10px;
   z-index: 0;
-  object-fit: cover;
+  object-fit: fill;
 }
-
+/**
 .load-card > :nth-child(1) {
   position: absolute;
   top: 25px;
@@ -40,8 +40,8 @@
   font-size: 0.9rem;
   max-width: 15rem;
 }
-
-.load-card:hover {
+*/
+.owned-load-card:hover {
   scale: 1.025;
   cursor: pointer;
   background: linear-gradient(

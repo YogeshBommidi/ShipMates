@@ -15,19 +15,57 @@ export const registerUser = asyncHandler(async (req, res) => {
     res.status(201).send({ message: "User already registered" });
   }
 });
-
+/**
 export const userLoads = asyncHandler(async (req, res) => {
   const { email } = req.body;
   try {
-    const userload = await prisma.User.findMany({
-      where: { email },
-      select: { ownedLoads: true },
+    const loads = await prisma.Load.findMany({
+      where: { userEmail: email },
+      select: { id: true },
     });
-    res.send(userload);
+
+    if (loads.length === 0) {
+      return res.status(404).json({
+        message: "No Loads Found for this email",
+      });
+    }
+
+    const loadIds = loads.map(load => load.id);
+
+    // Fetch the detailed data for each load
+    const userload = await prisma.Load.findMany({
+      where: { id: { in: loadIds } },
+    });
+
+    res.json(userload);
   } catch (err) {
-    throw new Error(err.message);
+    res.status(500).json({
+      message: err.message,
+    });
+  }
+});*/
+export const userLoads = asyncHandler(async (req, res) => {
+  const { email } = req.params; // Retrieve the email from the request parameters
+  try {
+    const loads = await prisma.Load.findMany({
+      where: { userEmail: email },
+    });
+
+    if (loads.length === 0) {
+      return res.status(404).json({
+        message: "No Loads Found for this email",
+      });
+    }
+
+    res.json(loads);
+  } catch (err) {
+    res.status(500).json({
+      message: err.message,
+    });
   }
 });
+
+
 
 export const userTrucks = asyncHandler(async (req, res) => {
   const { email } = req.body;

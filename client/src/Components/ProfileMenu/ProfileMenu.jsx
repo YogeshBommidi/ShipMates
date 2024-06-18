@@ -29,7 +29,11 @@ const ProfileMenu = ({ user, logout }) => {
           <Menu.Item onClick={() => navigate("/ownedTruck", { replace: true })}>
             My Trucks
           </Menu.Item>
-          <Menu.Item>My Loads</Menu.Item>
+          <Menu.Item
+            onClick={() => navigate("./ownedLoads", { replace: true })}
+          >
+            My Loads
+          </Menu.Item>
 
           <Menu.Divider />
 
