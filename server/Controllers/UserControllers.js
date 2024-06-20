@@ -65,8 +65,6 @@ export const userLoads = asyncHandler(async (req, res) => {
   }
 });
 
-
-
 export const userTrucks = asyncHandler(async (req, res) => {
   const { email } = req.body;
   try {
@@ -94,28 +92,38 @@ export const userTrucks = asyncHandler(async (req, res) => {
 
 export const truckPrice = asyncHandler(async (req, res) => {
   try {
-    const { loadId } = req.params;
-    const { userEmail } = req.body;
+    const { loadId } = req.params; // Destructure loadId from request params
+    const { userEmail } = req.body; // Destructure userEmail from request body
 
-    // Fetch the load and its owner
+    // Fetch the load and its owner from the database
     const load = await prisma.Load.findUnique({
       where: { id: loadId },
       select: { loadOwner: { select: { email: true } } },
     });
 
-    // Check if the load exists and if the user is authorized to view the truck prices
-    if (!load || load.loadOwner.email !== userEmail) {
+    // Check if the load exists and if the user is authorized
+    if (!load) {
+      return res.status(404).json({ error: "Load not found." });
+    }
+
+    if (load.loadOwner.email !== userEmail) {
       return res
         .status(403)
         .json({ error: "You are not authorized to view these truck prices." });
     }
+
+    const loadbyid = await prisma.Load.findUnique({
+      where: { id: loadId },
+    });
 
     // Fetch the truck prices for the load
     const truckPrices = await prisma.TruckPrice.findMany({
       where: { loadId },
     });
 
-    res.json(truckPrices);
+    // Return the truck prices as JSON
+    //res.send(loadbyid);
+    res.json({ loadbyid, truckPrices });
   } catch (error) {
     console.error(error.message);
     res.status(500).json({ error: "Internal server error." });

@@ -13,7 +13,7 @@ const router = express.Router();
 router.post("/registerUser", jwtCheck, registerUser);
 router.get("/getAllUserLoads/:email", jwtCheck, userLoads);
 router.get("/getAllUserTrucks", jwtCheck, userTrucks);
-router.get("/:loadId", jwtCheck, truckPrice);
-router.post("/:loadId/selectTruck", jwtCheck, selectTruck);
+router.post("/:loadId", jwtCheck, truckPrice);
+router.post("/:loadId/selectTruck",  selectTruck);
 
 export { router as UserRoute };

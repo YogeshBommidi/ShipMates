@@ -41,7 +41,7 @@ const Bids = () => {
         <Searchbar filter={filter} setFilter={setFilter} />
         <div className="paddings innerWidth Loads">
           {data
-            .filter((loads) => bids.map((bid) => bid.loadId).includes(loads.id))
+            .filter((loads) => bids?.map((bid) => bid.loadId).includes(loads.id))
             .filter(
               (loads) =>
                 loads.title.toLowerCase().includes(filter.toLowerCase()) ||

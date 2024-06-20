@@ -211,15 +211,34 @@ export const getOwnedTruck = async (email, token) => {
 
 export const getOwnedLoads = async (email, token) => {
   try {
-    const res = await api.get(
-      `/user/getAllUserLoads/${email}`,
-      {
-        headers: { Authorization: `Bearer ${token}` },
-      }
-    );
+    const res = await api.get(`/user/getAllUserLoads/${email}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
     return res.data;
   } catch (error) {
     toast.error("Something went wrong, getAllUserLoads error");
     throw error;
+  }
+};
+
+export const getLoadBids = async (loadId, email, token) => {
+  try {
+    const res = await api.post(
+      `/user/${loadId}`,
+      {
+        loadId: loadId,
+        userEmail: email,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    console.log(res.data);
+    return res.data;
+  } catch (err) {
+    toast.error("Something went wrong while fetching the loadBids");
+    throw err;
   }
 };

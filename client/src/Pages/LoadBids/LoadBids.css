@@ -1,0 +1,25 @@
+.loadbids-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--darkPale);
+}
+
+.loadbids-details {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.details-left{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+
+.bid-details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
