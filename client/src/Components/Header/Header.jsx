@@ -48,11 +48,7 @@ const Header = () => {
         <Link to="/">
           <img src="./header-logo.png" alt="logo" />
         </Link>
-        <OutsideClickHandler
-          onOutsideClick={() => {
-            setMenuOpened(false);
-          }}
-        >
+        
           {menuOpened === false && isMobile ? (
             <div
               onClick={() => setMenuOpened(!menuOpened)}
@@ -95,7 +91,6 @@ const Header = () => {
               )}
             </div>
           )}
-        </OutsideClickHandler>
       </div>
     </div>
   );

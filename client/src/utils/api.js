@@ -257,8 +257,7 @@ export const selectTruck = async (loadId, userEmail, truckEmail, token) => {
         },
       }
     );
-    console.log(res.data);
-    return res;
+    return res.data.truckDetails.truck;
   } catch (err) {
     toast.error("Something went wrong while selecting truck");
     throw err;

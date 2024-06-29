@@ -6,4 +6,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.Booking-container > :nth-child(1){
+  font-size: 2.5rem;
+}
+
+.Booking-container > :nth-child(2){
+  font-size: 2rem;
+}
+
+.Booking-container > :nth-child(3){
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.Booking-container > :nth-child(4){
+  font-size: 1.2rem;
+}
+
+.Booking-container > :nth-child(5) {
+  font-size: 1.2rem;
 }

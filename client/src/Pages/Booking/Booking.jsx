@@ -51,8 +51,11 @@ const Booking = () => {
   return (
     <div className="Booking-wrapper">
       <div className="paddings inner-width Booking-container">
-        <h1>Booked Successfully</h1>
-        
+        <h1 className="primaryText">This Load is allocated to : </h1>
+        <span className="primaryText">Driver Name : {data?.driverName}</span>
+        <span className="orangeText">License : {data?.license}</span>
+        <span className="secondaryText">Truck Capacity : {data?.truckCapacity}</span>
+        <span className="primaryText">Truck Email : {data?.truckEmail}</span>
       </div>
     </div>
   );
