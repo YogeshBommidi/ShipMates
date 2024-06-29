@@ -1,0 +1,9 @@
+.Booking-wrapper {
+  background: var(--darkPale);
+}
+
+.Booking-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

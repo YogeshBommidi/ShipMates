@@ -235,10 +235,32 @@ export const getLoadBids = async (loadId, email, token) => {
         },
       }
     );
-    console.log(res.data);
     return res.data;
   } catch (err) {
     toast.error("Something went wrong while fetching the loadBids");
+    throw err;
+  }
+};
+
+export const selectTruck = async (loadId, userEmail, truckEmail, token) => {
+  try {
+    const res = await api.post(
+      `/user/${loadId}/${truckEmail}`,
+      {
+        loadId: loadId,
+        userEmail: userEmail,
+        truckEmail: truckEmail,
+      },
+      {
+        headers : {
+          Authorization : `Bearer ${token}`
+        }
+      }
+    );
+    console.log(res.data)
+    return res;
+  } catch (err) {
+    toast.error("Something went wrong while selecting truck");
     throw err;
   }
 };

@@ -1,6 +1,6 @@
 .bidcard {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   padding: 1rem;

@@ -8,7 +8,7 @@ const OwnedLoadCard = ({ card }) => {
   return (
     <div
       className="owned-load-card"
-      onClick={() => navigate(`../OwnedLoads/${card.id}`)}
+      onClick={() => navigate(`../ownedLoads/${card.id}`)}
     >
       <img src={card.image} alt="Load-image" />
       <span className="primaryText">

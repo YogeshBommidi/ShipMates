@@ -18,7 +18,11 @@ const LoadBids = () => {
   } = useContext(UserDetailContext);
   const { data, isLoading, isError } = useQuery(
     ["loadBids", loadId, email, token],
-    () => getLoadBids(loadId, email, token)
+    () => getLoadBids(loadId, email, token),
+    {
+      enabled: !!email && !!token && !!loadId,
+      retry: false,
+    }
   );
 
   if (isError) {

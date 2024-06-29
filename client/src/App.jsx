@@ -15,6 +15,7 @@ import Bids from "./Pages/Bids/Bids";
 import OwnedTruck from "./Pages/OwnedTruck/OwnedTruck";
 import OwnedLoads from "./Pages/OwnedLoads/OwnedLoads";
 import LoadBids from "./Pages/LoadBids/LoadBids";
+import Booking from "./Pages/Booking/Booking";
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -39,9 +40,10 @@ const App = () => {
                 <Route path="/favourities" element={<Favourities />} />
                 <Route path="/bids" element={<Bids />} />
                 <Route path="/ownedTruck" element={<OwnedTruck />} />
-                <Route path="/OwnedLoads">
+                <Route path="/ownedLoads">
                   <Route index element={<OwnedLoads />} />
                   <Route path=":loadId" element={<LoadBids />} />
+                  <Route path=":truckEmail/:loadId" element={<Booking/>}/>
                 </Route>
               </Route>
             </Routes>

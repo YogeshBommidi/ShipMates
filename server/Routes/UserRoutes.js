@@ -14,6 +14,6 @@ router.post("/registerUser", jwtCheck, registerUser);
 router.get("/getAllUserLoads/:email", jwtCheck, userLoads);
 router.get("/getAllUserTrucks", jwtCheck, userTrucks);
 router.post("/:loadId", jwtCheck, truckPrice);
-router.post("/:loadId/selectTruck",  selectTruck);
+router.post("/:loadId/:truckEmail", jwtCheck, selectTruck);
 
 export { router as UserRoute };
