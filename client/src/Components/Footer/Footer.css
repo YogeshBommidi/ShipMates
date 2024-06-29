@@ -31,6 +31,10 @@
   font-size: 1rem;
 }
 
+.footer-1 a {
+  font-size: 1rem;
+}
+
 .footer-2 {
   display: flex;
   flex-wrap: wrap;
@@ -38,6 +42,10 @@
   align-items: center;
   gap: 1rem;
   color: var(--darkGrey);
+}
+
+.footer-2 a{
+  font-size: 1rem;
 }
 
 .copy-right {

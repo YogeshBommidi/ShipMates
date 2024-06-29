@@ -12,14 +12,14 @@ const Footer = () => {
             <span className="primaryText">Developer</span>
             <ul>
               <li className="secondaryText">About Developer</li>
-              <li className="secondaryText">ShipMates Code</li>
+              <a href="https://github.com/YogeshBommidi/ShipMates" className="orangeText">ShipMates Code</a>
             </ul>
           </div>
           <div className="footer-socials">
             <span className="primaryText">SOCIALS</span>
             <ul>
               <li className="secondaryText">Instagram</li>
-              <li className="secondaryText">LinkedIn</li>
+              <a href="https://www.linkedin.com/in/yogesh-bommidi-74263223b/" className="orangeText">LinkedIn</a>
               <li className="secondaryText">Facebook</li>
               <li className="secondaryText">YouTube</li>
             </ul>
@@ -28,7 +28,7 @@ const Footer = () => {
         <div className=" paddings footer-2">
           <div className="copy-right">
             <span>&copy; Copyright </span>
-            <a href="">ShipMates</a>
+            <a href="" className="orangeText"> ShipMates</a>
           </div>
           <div className="rights">
             <span>All Right Reserved</span>
