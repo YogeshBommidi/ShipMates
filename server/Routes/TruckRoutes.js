@@ -18,6 +18,6 @@ router.post("/getAllBids", jwtCheck, getAllBids);
 router.post("/cancelBid/:loadId", jwtCheck, cancelBid);
 router.post("/toFav/:loadId", jwtCheck, toFav);
 router.post("/getAllFav",jwtCheck, getAllFav);
-router.post("/getAllBookings",  getAllBookings);
+router.post("/getAllBookings", jwtCheck, getAllBookings);
 
 export { router as TruckRoute };

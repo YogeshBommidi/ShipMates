@@ -252,15 +252,29 @@ export const selectTruck = async (loadId, userEmail, truckEmail, token) => {
         truckEmail: truckEmail,
       },
       {
-        headers : {
-          Authorization : `Bearer ${token}`
-        }
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       }
     );
-    console.log(res.data)
+    console.log(res.data);
     return res;
   } catch (err) {
     toast.error("Something went wrong while selecting truck");
     throw err;
+  }
+};
+
+export const myBookings = async (email, token) => {
+  try {
+    const res = await api.post(
+      `/truck/getAllBookings`,
+      { truckEmail : email },
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+    return res.data.bookedLoads
+  } catch {
+    toast.error("Something Went Wrong, myBookings errror");
+    throw error;
   }
 };

@@ -1,0 +1,11 @@
+.mybooking-wrapper{
+    background: var(--darkPale);
+}
+
+.mybooking-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    
+}

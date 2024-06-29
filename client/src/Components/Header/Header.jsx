@@ -8,6 +8,8 @@ import ProfileMenu from "../ProfileMenu/ProfileMenu";
 import AddLoadModel from "../AddLoadModel/AddLoadModel";
 import useAuthCheck from "../../Hooks/useAuthCheck";
 import AddTruckModal from "../AddTruckModal/AddTruckModal";
+import OutsideClickHandler from "react-outside-click-handler";
+
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -46,45 +48,54 @@ const Header = () => {
         <Link to="/">
           <img src="./header-logo.png" alt="logo" />
         </Link>
-        {menuOpened === false && isMobile ? (
-          <div onClick={() => setMenuOpened(!menuOpened)} className="menu-icon">
-            <BiMenuAltRight size={35} />
-          </div>
-        ) : (
-          <div className="header-menu">
-            {menuOpened && isMobile ? (
-              <div className="close-icon">
-                <GiCancel size={30} onClick={() => setMenuOpened(false)} />
-              </div>
-            ) : null}
-            <NavLink to="/MarketPlace" onClick={() => setMenuOpened(false)}>
-              Market Place
-            </NavLink>
-            <div onClick={handleAddLoadClick}>Add Load</div>
-            <AddLoadModel
-              loadOpened={loadModelOpened}
-              setLoadOpened={setLoadModelOpened}
-            />
-            <div onClick={handleAddLoadModal}>Add Truck</div>
-            <AddTruckModal
-              truckOpened={truckModalOpened}
-              setTruckOpened={setTruckModalOpened}
-            />
-            <a
-              href="mailto:yogeshbommidi@gmail.com"
-              onClick={() => setMenuOpened(false)}
+        <OutsideClickHandler
+          onOutsideClick={() => {
+            setMenuOpened(false);
+          }}
+        >
+          {menuOpened === false && isMobile ? (
+            <div
+              onClick={() => setMenuOpened(!menuOpened)}
+              className="menu-icon"
             >
-              Contact Us
-            </a>
-            {!isAuthenticated ? (
-              <button className="btn" onClick={loginWithRedirect}>
-                Login
-              </button>
-            ) : (
-              <ProfileMenu user={user} logout={logout} />
-            )}
-          </div>
-        )}
+              <BiMenuAltRight size={35} />
+            </div>
+          ) : (
+            <div className="header-menu">
+              {menuOpened && isMobile ? (
+                <div className="close-icon">
+                  <GiCancel size={30} onClick={() => setMenuOpened(false)} />
+                </div>
+              ) : null}
+              <NavLink to="/MarketPlace" onClick={() => setMenuOpened(false)}>
+                Market Place
+              </NavLink>
+              <div onClick={handleAddLoadClick}>Add Load</div>
+              <AddLoadModel
+                loadOpened={loadModelOpened}
+                setLoadOpened={setLoadModelOpened}
+              />
+              <div onClick={handleAddLoadModal}>Add Truck</div>
+              <AddTruckModal
+                truckOpened={truckModalOpened}
+                setTruckOpened={setTruckModalOpened}
+              />
+              <a
+                href="mailto:yogeshbommidi@gmail.com"
+                onClick={() => setMenuOpened(false)}
+              >
+                Contact Us
+              </a>
+              {!isAuthenticated ? (
+                <button className="btn" onClick={loginWithRedirect}>
+                  Login
+                </button>
+              ) : (
+                <ProfileMenu user={user} logout={logout} />
+              )}
+            </div>
+          )}
+        </OutsideClickHandler>
       </div>
     </div>
   );
