@@ -12,7 +12,7 @@ import useBids from "../../Hooks/useBids";
 const Layout = () => {
   useFavourities();
   useBids();
-  const { isAuthenticated, user, getAccessTokenSilently } = useAuth0();
+  const { isAuthenticated, user, getAccessTokenWithPopup } = useAuth0();
   const { setUserDetails } = useContext(UserDetailContext);
 
   const { mutate } = useMutation({
@@ -22,7 +22,7 @@ const Layout = () => {
 
   useEffect(() => {
     const getTokenAndRegsiter = async () => {
-      const res = await getAccessTokenSilently({
+      const res = await getAccessTokenWithPopup({
         authorizationParams: {
           audience: "http://localhost:8000",
           scope: "openid profile email",

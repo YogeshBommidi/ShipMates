@@ -15,35 +15,7 @@ export const registerUser = asyncHandler(async (req, res) => {
     res.status(201).send({ message: "User already registered" });
   }
 });
-/**
-export const userLoads = asyncHandler(async (req, res) => {
-  const { email } = req.body;
-  try {
-    const loads = await prisma.Load.findMany({
-      where: { userEmail: email },
-      select: { id: true },
-    });
 
-    if (loads.length === 0) {
-      return res.status(404).json({
-        message: "No Loads Found for this email",
-      });
-    }
-
-    const loadIds = loads.map(load => load.id);
-
-    // Fetch the detailed data for each load
-    const userload = await prisma.Load.findMany({
-      where: { id: { in: loadIds } },
-    });
-
-    res.json(userload);
-  } catch (err) {
-    res.status(500).json({
-      message: err.message,
-    });
-  }
-});*/
 export const userLoads = asyncHandler(async (req, res) => {
   const { email } = req.params; // Retrieve the email from the request parameters
   try {
@@ -67,28 +39,38 @@ export const userLoads = asyncHandler(async (req, res) => {
 
 export const userTrucks = asyncHandler(async (req, res) => {
   const { email } = req.body;
+
   try {
+    // Fetch the truck ID using the provided email
     const truck = await prisma.Truck.findFirst({
       where: { truckEmail: email },
       select: { id: true },
     });
 
+    // If no truck is found, return a 404 status with an error message
     if (!truck) {
-      res.status(404).json({
+      return res.status(404).json({
         message: "No Truck Found for this email",
       });
     }
 
-    const { id: truckId } = truck;
-
-    const userload = await prisma.Truck.findUnique({
-      where: { id: truckId },
+    // Fetch the truck details using the truck ID
+    const truckDetails = await prisma.Truck.findUnique({
+      where: { id: truck.id },
     });
-    res.send(userload);
+
+    // Return the truck details
+    res.json(truckDetails);
   } catch (err) {
-    throw new Error(err.message);
+    // Handle any errors that occur during the process
+    res.status(500).json({
+      message: "An error occurred while fetching the truck details",
+      error: err.message,
+    });
   }
 });
+
+
 
 export const truckPrice = asyncHandler(async (req, res) => {
   try {
