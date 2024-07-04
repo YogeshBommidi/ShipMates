@@ -16,6 +16,7 @@ const ProfileMenu = ({ user, logout }) => {
             color="orange"
             src=""
           />
+          {/**<Avatar src={user?.picture} alt="user image" radius={"xl"} />*/}
         </Menu.Target>
         <Menu.Dropdown style={{ background: "#F6F1EE" }}>
           <Menu.Item
@@ -26,7 +27,9 @@ const ProfileMenu = ({ user, logout }) => {
           <Menu.Item onClick={() => navigate("./bids", { replace: true })}>
             My Bids
           </Menu.Item>
-          <Menu.Item onClick={() => navigate("./ownedTruck", { replace: true })}>
+          <Menu.Item
+            onClick={() => navigate("./ownedTruck", { replace: true })}
+          >
             My Truck
           </Menu.Item>
           <Menu.Item
