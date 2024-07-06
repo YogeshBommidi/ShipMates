@@ -22,8 +22,9 @@
 
 .review-cards > img {
   width: 80%;
-  height: 7rem;
+  height: 8rem;
   border-radius: 10px;
+  object-fit: fill;
 }
 
 .review-text {
@@ -43,6 +44,8 @@
 .review-text > :nth-child(2) {
   font-size: 0.9rem;
   font-weight: 400;
+  color: var(--orange);
+  font-weight: 500;
 }
 
 .review-text button {

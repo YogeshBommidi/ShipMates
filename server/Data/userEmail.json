@@ -1,23 +1,12 @@
 [
-  {
-    "email": "user1@example.com"
-  },
-  {
-    "email": "user2@example.com"
-  },
-  {
-    "email": "user3@example.com"
-  },
-  {
-    "email": "user4@example.com"
-  },
-  {
-    "email": "user5@example.com"
-  },
-  {
-    "email": "user6@example.com"
-  },
-  {
-    "email": "user7@example.com"
-  }
+  { "email": "user1@example.com" },
+  { "email": "user2@example.com" },
+  { "email": "user3@example.com" },
+  { "email": "user4@example.com" },
+  { "email": "user5@example.com" },
+  { "email": "user6@example.com" },
+  { "email": "user7@example.com" },
+  { "email": "user8@example.com" },
+  { "email": "user9@example.com" },
+  { "email": "user10@example.com" }
 ]

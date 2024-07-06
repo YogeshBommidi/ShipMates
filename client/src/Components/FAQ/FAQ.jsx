@@ -5,7 +5,7 @@ import faqData from "../../data/faq.json";
 import "./FAQ.css";
 
 const FAQ = () => {
-  const [isOpen, setIsopen] = useState(4);
+  const [isOpen, setIsopen] = useState(2);
 
   const [isItemOpen, setIsItemOpen] = useState(null);
 
@@ -33,9 +33,9 @@ const FAQ = () => {
           })}
         </div>
         <button
-          onClick={() => setIsopen((prev) => (prev === 4 ? faqData.length : 4))}
+          onClick={() => setIsopen((prev) => (prev === 2 ? faqData.length : 2))}
         >
-          {isOpen === 4 ? "View More Answers" : "View Less Answers"}
+          {isOpen === 2 ? "View More Answers" : "View Less Answers"}
         </button>
       </div>
     </div>
