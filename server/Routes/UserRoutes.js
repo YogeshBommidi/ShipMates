@@ -10,8 +10,8 @@ import jwtCheck from "../Config/auth0Config.js";
 
 const router = express.Router();
 
-router.post("/registerUser",  registerUser);
-router.get("/getAllUserLoads/:email", jwtCheck, userLoads);
+router.post("/registerUser", jwtCheck, registerUser);
+router.get("/getAllUserLoads/:email",  userLoads);
 router.get("/getAllUserTrucks", jwtCheck, userTrucks);
 router.post("/:loadId", jwtCheck, truckPrice);
 router.post("/:loadId/:truckEmail", jwtCheck, selectTruck);

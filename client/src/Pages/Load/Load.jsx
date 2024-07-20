@@ -61,6 +61,7 @@ const Load = () => {
       </div>
     );
   }
+
   return (
     <div className="load-wrapper">
       <div className="paddings innerWidth load-container">

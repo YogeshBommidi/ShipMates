@@ -1,14 +1,12 @@
 .bidcard {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   position: relative;
   padding: 1rem;
   gap: 20%;
   width: 100%;
-  border-radius: 10px;
   margin: auto;
-  max-width: max-content;
   transition: all 300ms ease-in;
 }
 
@@ -16,6 +14,7 @@
   display: flex;
   flex-direction: column;
 }
+
 /**
 .bidcard:hover {
   scale: 1.025;

@@ -14,14 +14,21 @@
   justify-content: center;
   align-items: center;
 }
-
+/**
 .ownedtruck-right {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  width: 50%;
   height: auto;
   object-fit: cover;
+}
+*/
+.ownedtruck-right img{
+  width: 35rem;
+  height: 30rem;
+  object-fit: cover;
+  border-radius: 25px;
 }
 
 @media screen and (max-width: 768px) {

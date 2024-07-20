@@ -4,7 +4,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useQuery } from "react-query";
 import UserDetailContext from "../../Components/Context/UserDetailContext";
 import { selectTruck } from "../../utils/api";
-import { toast } from "react-toastify";
 import "./Bookings.css";
 import { PuffLoader } from "react-spinners";
 
