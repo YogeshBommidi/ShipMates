@@ -15,4 +15,3 @@ Truck Drivers firstly needed to upload the truck details through ADD TRUCK compo
 Truck Driver can also favourite a load.
 All the Favourites, Bids, Bookings can be seen in the respective pages.
 Since the customers and truck drivers communicate with each other, transpotation cost is efficient.
--
