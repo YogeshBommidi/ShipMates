@@ -1,34 +1,34 @@
-ShipMates is a FULL STACK MERN project.
+**ShipMates** is a FULL STACK MERN project.
 
-ShipMates is A project developed to solve the problem of high cost transportations.
+**ShipMates** is A project developed to solve the problem of high cost transportations.
 
-Teck Stack used in Project:
+**Teck Stack** used in Project:
 
-  -MongoDB: for database,
+  -**MongoDB**: to store application data,
   
-  -Express: for API's,
+  -**Express**: to hanlde HTTP request and routes,
   
-  -React: for Front-End,
+  -**React**: for Front-End,
   
-  -Node: for Back-End,
+  -**Node**: for executing server side coding,
   
-  -Oauth: for secured login in both client side and server side using JWT,
+  -**Auth0**: for seamless authintication flow for both client side and server side using JWT,
   
-  -Mantine: for components,
+  -**Mantine**: for components,
   
-  -Prisma: for schema,
+  -**Prisma**: for schema robustness,
   
-  -React Query: for data querys.
+  -**React Query**: for multiple queries, cache data, invalidation.
   
-How to run:
+**How to run:**
 
-  -first clone this git repo.
+  -first clone this **git repo**.
   
-  -to run the server type the command "yarn run start".
+  -to run the server type the command **"yarn run start"**.
   
-  -to run the client type the command "yarn run dev".
+  -to run the client type the command **"yarn run dev"**.
 
-About the Project:
+**About the Project:**
 
 In this web application, both the customer and truck drivers can directly communicate.
 The load which is to be transported need to be uploaded to the page by ADD LOAD component. And the truck drivers who are interested on that load can bid there price through BID component.
