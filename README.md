@@ -1,4 +1,5 @@
 ShipMates is a FULL STACK MERN project.
+
 ShipMates is A project developed to solve the problem of high cost transportations.
 Teck Stack used in Project:
   -MongoDB: for database,
