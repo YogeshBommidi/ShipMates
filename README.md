@@ -12,7 +12,7 @@
   
   -**Node**: for executing server side coding,
   
-  -**Auth0**: for seamless authintication flow for both client side and server side using JWT,
+  -**Auth0**: for seamless authentication flow for both client side and server side using JWT,
   
   -**Mantine**: for components,
   
