@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import { toast } from "react-toastify";
 
 export const api = axios.create({
-  baseURL: "https://shipmates.vercel.app/api",
+  baseURL: "https://shipmates-server.vercel.app/api",
 });
 
 export const getAllLoads = async () => {
