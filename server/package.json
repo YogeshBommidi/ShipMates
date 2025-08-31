@@ -9,7 +9,7 @@
     "postinstall": "prisma generate"
   },
   "engines": {
-    "node": ">=20 <=22"
+    "node": "20.x"
   },
   "dependencies": {
     "@prisma/client": "^5.12.1",
